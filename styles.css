@@ -1,40 +1,23 @@
-/* Newspaper-style design for The Peoples Paper */
+.masthead {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.columns {
+    column-count: 3;
+    column-gap: 20px;
+}
+
+.featured-article {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+}
 
 body {
-    font-family: 'Georgia', serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5;
     color: #333;
-    margin: 20px;
-}
-
-header {
-    text-align: center;
-    padding: 20px;
-    background: #555;
-    color: white;
-}
-
-h1, h2, h3 {
-    color: #333;
-}
-
-article {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 20px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #555;
-    color: white;
-}
-
-@media print {
-    body {
-        margin: 0;
-        padding: 0;
-    }
 }
