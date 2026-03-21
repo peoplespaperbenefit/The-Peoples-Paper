@@ -1,40 +1,120 @@
+/* ---------- Masthead / Header ---------- */
 .masthead {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
+    background-color: #222; /* Darker, more classic newspaper header */
+    color: #fdfcf7;
+    padding: 20px 10px;
+    text-align: center;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 2em;
+    letter-spacing: 2px;
+    border-bottom: 4px solid #aaa; /* Adds separation like a paper header */
 }
 
+/* ---------- Navigation ---------- */
 nav {
-  display: flex;
-  justify-content: space-around;
-  background-color: #f4f4f4;
-  padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fdfcf7;
+    padding: 12px 10px;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
 }
 
 nav a {
-  text-decoration: none;
-  color: #333;
+    text-decoration: none;
+    color: #222;
+    transition: color 0.3s;
 }
 
+nav a:hover {
+    color: #555;
+}
+
+/* ---------- Featured Articles / Highlights ---------- */
 .featured-articles {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
 }
 
 .article {
-  flex: 1;
-  margin: 0 10px;
+    flex: 1;
+    margin: 0 10px;
+    background-color: #fcfcf7;
+    border: 1px solid #ddd;
+    padding: 15px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    font-family: "Georgia", "Times New Roman", serif;
 }
 
+.article h3 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* ---------- Multi-column content ---------- */
 .multi-column {
-  column-count: 3;
-  column-gap: 20px;
+    column-count: 3;
+    column-gap: 20px;
+    font-family: "Georgia", "Times New Roman", serif;
+    line-height: 1.6;
+    margin: 20px 0;
 }
 
+/* ---------- Submission Card ---------- */
 .submission-card {
-  border: 1px solid #ddd;
+    border: 2px solid #333; /* darker border like a newspaper box */
+    padding: 15px;
+    margin: 20px 0;
+    background-color: #fdfcf7;
+    font-family: "Georgia", "Times New Roman", serif;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submission-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ---------- General Newspaper Styling ---------- */
+body {
+    background-color: #fcfcf7; /* off-white paper-like background */
+    color: #222;
+    font-family: "Georgia", "Times New Roman", serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-weight: normal;
+}
+
+p {
+    margin: 0 0 15px 0;
+}
+
+/* Optional: subtle “newsprint” texture for the page */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.01),
+        rgba(0,0,0,0.01) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+}  border: 1px solid #ddd;
   padding: 10px;
   margin: 20px 0;
   background-color: #f9f9f9;
