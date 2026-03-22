@@ -1,40 +1,117 @@
-/* ---------- Masthead / Header ---------- */
-.masthead {
-    background-color: #222; /* Darker, more classic newspaper header */
-    color: #fdfcf7;
-    padding: 20px 10px;
-    text-align: center;
+/* ---------- Global Newspaper Feel ---------- */
+body {
     font-family: "Georgia", "Times New Roman", serif;
-    font-size: 2em;
-    letter-spacing: 2px;
-    border-bottom: 4px solid #aaa; /* Adds separation like a paper header */
+    background-color: #f4f1ea; /* paper tone */
+    color: #111;
+    margin: 0;
+    line-height: 1.6;
 }
 
-/* ---------- Navigation ---------- */
+/* ---------- Masthead ---------- */
+.masthead {
+    background-color: #f4f1ea;
+    color: #111;
+    padding: 25px 10px 10px;
+    text-align: center;
+    border-bottom: 3px double #000;
+}
+
+.masthead h1 {
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.masthead p {
+    font-size: 0.9rem;
+    margin: 5px 0 0;
+    letter-spacing: 1px;
+}
+
+/* ---------- Navigation (like section bar) ---------- */
 nav {
     display: flex;
-    justify-content: space-around;
-    background-color: #fdfcf7;
-    padding: 12px 10px;
-    font-family: "Georgia", "Times New Roman", serif;
-    font-weight: bold;
-    border-bottom: 2px solid #ccc;
+    justify-content: center;
+    gap: 30px;
+    padding: 10px 0;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
 nav a {
     text-decoration: none;
-    color: #222;
-    transition: color 0.3s;
+    color: #111;
 }
 
 nav a:hover {
-    color: #555;
+    text-decoration: underline;
 }
 
-/* ---------- Featured Articles / Highlights ---------- */
+/* ---------- Main Layout (NEWSPAPER COLUMNS) ---------- */
+main {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 15px;
+
+    column-count: 3; /* KEY newspaper effect */
+    column-gap: 30px;
+}
+
+/* ---------- Articles ---------- */
+article {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+article h2 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+article p {
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+/* ---------- Featured Article (Front Page Headline) ---------- */
 .featured-articles {
-    display: flex;
-    justify-content: space-between;
+    column-span: all; /* spans across all columns */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 15px;
+}
+
+.featured-articles h2 {
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.featured-articles p {
+    font-size: 1.1rem;
+}
+
+/* ---------- Drop Cap Effect (classic newspaper style) ---------- */
+article p::first-letter {
+    float: left;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 6px;
+    font-weight: bold;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 20px;
+    border-top: 1px solid #000;
+    margin-top: 30px;
+}    justify-content: space-between;
     margin: 30px 0;
 }
 
