@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Art Gallery | The People's Paper</title>
@@ -11,9 +10,7 @@
 
 <style>
 
-/* =========================================================
-   ===== GENERAL PAGE STYLING =====
-   ========================================================= */
+/* ===== GENERAL ===== */
 body {
     margin: 0;
     font-family: 'Libre Baskerville', serif;
@@ -21,9 +18,7 @@ body {
     color: #111;
 }
 
-/* =========================================================
-   ===== HEADER =====
-   ========================================================= */
+/* ===== HEADER ===== */
 header {
     background: white;
     border-bottom: 4px double black;
@@ -31,7 +26,6 @@ header {
     padding: 10px;
 }
 
-/* Top bar */
 .top-bar {
     font-size: 0.8rem;
     display: flex;
@@ -40,7 +34,6 @@ header {
     padding: 5px 10px;
 }
 
-/* Masthead */
 h1.masthead {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
@@ -49,71 +42,64 @@ h1.masthead {
     letter-spacing: 2px;
 }
 
-/* =========================================================
-   ===== NAVIGATION BAR (SINGLE LINE + FITS ALL LINKS) =====
-   ========================================================= */
+.tagline {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* ===== NAV ===== */
 .main-nav {
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap; /* prevents wrapping */
     gap: 12px;
     padding: 6px 10px;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     background: #fdfcf7;
-    white-space: nowrap;
 }
 
-/* Navigation links */
 .main-nav a {
     text-decoration: none;
     color: #111;
     font-weight: bold;
-    font-size: 0.78rem; /* smaller so everything fits */
+    font-size: 0.78rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 0 5px;
 }
 
-/* Divider between links */
 .main-nav a:not(:last-child)::after {
     content: "|";
     margin-left: 10px;
     color: #777;
 }
 
-/* Hover effect */
 .main-nav a:hover {
     text-decoration: underline;
 }
 
-/* Active page */
 .main-nav a.active {
     text-decoration: underline;
 }
-/* =========================================================
-   ===== MAIN CONTENT =====
-   ========================================================= */
+
+/* ===== MAIN ===== */
 main {
     max-width: 1100px;
     margin: auto;
     padding: 20px;
 }
 
-/* Page title */
 .page-title {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     margin-bottom: 10px;
 }
 
-/* Intro */
 .gallery-intro {
     margin-bottom: 20px;
     font-size: 0.95rem;
 }
 
-/* Gallery grid */
+/* ===== GALLERY ===== */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -128,7 +114,6 @@ main {
 
 .gallery-item img {
     width: 100%;
-    height: auto;
     display: block;
 }
 
@@ -142,9 +127,7 @@ main {
     font-size: 0.85rem;
 }
 
-/* =========================================================
-   ===== FOOTER =====
-   ========================================================= */
+/* ===== FOOTER ===== */
 footer {
     margin-top: 30px;
     border-top: 2px solid black;
@@ -160,214 +143,6 @@ footer {
 <body>
 
 <header>
-
-    <div class="top-bar">
-        <span>March 22, 2026</span>
-        <span>Vol. 1 No. 1</span>
-    </div>
-
-    <h1 class="masthead">THE PEOPLE'S PAPER</h1>
-
-    <!-- NAVIGATION (NO TAGLINE) -->
-    <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="store.html">Store</a>
-        <a href="members.html">Members</a>
-        <a href="submission.html">Submit</a>
-        <a href="gallery.html" class="active">Art Gallery</a>
-    </nav>
-
-</header>
-
-<main>
-
-    <div class="page-title">Art Gallery</div>
-
-    <div class="gallery-intro">
-        A curated collection of artwork submitted by the public. Photography, illustration, painting, and more.
-    </div>
-
-    <div class="gallery-grid">
-
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300" alt="Artwork 1">
-            <h3>Untitled Piece</h3>
-            <p>By Artist Name</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300" alt="Artwork 2">
-            <h3>City Reflections</h3>
-            <p>By Artist Name</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300" alt="Artwork 3">
-            <h3>Abstract Form</h3>
-            <p>By Artist Name</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300" alt="Artwork 4">
-            <h3>Still Life Study</h3>
-            <p>By Artist Name</p>
-        </div>
-
-    </div>
-
-</main>
-
-<footer>
-    © 2026 The People's Paper | All rights reserved
-</footer>
-
-</body>
-</html>/* Top strip (date + issue number) */
-.top-bar {
-    font-size: 0.8rem;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #aaa;
-    padding: 5px 10px;
-}
-
-/* Main newspaper title */
-h1.masthead {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: 3rem;
-    margin: 10px 0;
-    letter-spacing: 2px;
-}
-
-/* Small description under title */
-.tagline {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-}
-
-/* =========================================================
-   ===== NAVIGATION BAR (shared across ALL pages) =====
-   - To add pages, duplicate a link below
-   - "active" class highlights current page
-   ========================================================= */
-.main-nav {
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    padding: 6px 0;
-    text-align: center;
-    background: #fdfcf7;
-}
-
-/* Each navigation link */
-.main-nav a {
-    margin: 0 18px;
-    text-decoration: none;
-    color: #111;
-    font-weight: bold;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-/* Divider between links (| symbol) */
-.main-nav a:not(:last-child)::after {
-    content: "|";
-    margin-left: 18px;
-    color: #777;
-}
-
-/* Hover effect */
-.main-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Current page highlight */
-.main-nav a.active {
-    text-decoration: underline;
-}
-
-/* =========================================================
-   ===== MAIN CONTENT AREA =====
-   ========================================================= */
-main {
-    max-width: 1100px; /* Controls page width */
-    margin: auto; /* Centers content */
-    padding: 20px;
-}
-
-/* Page title ("Art Gallery") */
-.page-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-}
-
-/* Intro paragraph under title */
-.gallery-intro {
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-}
-
-/* =========================================================
-   ===== GALLERY GRID (layout for images) =====
-   - Adjust column size by changing "250px"
-   ========================================================= */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* Individual artwork card */
-.gallery-item {
-    background: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
-
-/* Artwork image */
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Artwork title */
-.gallery-item h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    margin: 10px 0 5px;
-}
-
-/* Artist name / description */
-.gallery-item p {
-    font-size: 0.85rem;
-}
-
-/* =========================================================
-   ===== FOOTER =====
-   ========================================================= */
-footer {
-    margin-top: 30px;
-    border-top: 2px solid black;
-    text-align: center;
-    padding: 15px;
-    background: white;
-    font-size: 0.8rem;
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- =========================================================
-     ===== HEADER SECTION =====
-     - Edit date, issue number, and tagline here
-     ========================================================= -->
-<header>
-
     <div class="top-bar">
         <span>March 22, 2026</span>
         <span>Vol. 1 No. 1</span>
@@ -379,66 +154,51 @@ footer {
         A public outlet for stories, ideas, interests, artwork and more...
     </div>
 
-    <!-- ===== NAVIGATION MENU ===== -->
-    <!-- Add new pages by copying a link -->
-<nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="store.html">Store</a>
-    <a href="members.html">Members</a>
-    <a href="submission.html">Submit</a>
-    <a href="gallery.html" class="active">Art Gallery</a>
-</nav>
-
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="members.html">Members</a>
+        <a href="submission.html">Submit</a>
+        <a href="gallery.html" class="active">Art Gallery</a>
+    </nav>
 </header>
 
-<!-- =========================================================
-     ===== MAIN PAGE CONTENT =====
-     ========================================================= -->
 <main>
-
-    <!-- Page title -->
     <div class="page-title">Art Gallery</div>
 
-    <!-- Short description -->
     <div class="gallery-intro">
         A curated collection of artwork submitted by the public. Photography, illustration, painting, and more.
     </div>
 
-    <!-- ===== GALLERY GRID ===== -->
     <div class="gallery-grid">
 
-        <!-- ===== ARTWORK ITEM (Copy this block to add more) ===== -->
         <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300" alt="Artwork 1">
+            <img src="https://via.placeholder.com/400x300">
             <h3>Untitled Piece</h3>
             <p>By Artist Name</p>
         </div>
 
         <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300" alt="Artwork 2">
+            <img src="https://via.placeholder.com/400x300">
             <h3>City Reflections</h3>
             <p>By Artist Name</p>
         </div>
 
         <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300" alt="Artwork 3">
+            <img src="https://via.placeholder.com/400x300">
             <h3>Abstract Form</h3>
             <p>By Artist Name</p>
         </div>
 
         <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300" alt="Artwork 4">
+            <img src="https://via.placeholder.com/400x300">
             <h3>Still Life Study</h3>
             <p>By Artist Name</p>
         </div>
 
     </div>
-
 </main>
 
-<!-- =========================================================
-     ===== FOOTER =====
-     ========================================================= -->
 <footer>
     © 2026 The People's Paper | All rights reserved
 </footer>
