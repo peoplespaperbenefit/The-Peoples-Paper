@@ -50,32 +50,40 @@ h1.masthead {
 }
 
 /* =========================================================
-   ===== NAVIGATION =====
+   =/* =========================================================
+   ===== NAVIGATION BAR (SINGLE LINE + FITS ALL LINKS) =====
    ========================================================= */
 .main-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap; /* prevents wrapping */
+    gap: 12px;
+    padding: 6px 10px;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
-    padding: 6px 0;
-    text-align: center;
     background: #fdfcf7;
+    white-space: nowrap;
 }
 
+/* Navigation links */
 .main-nav a {
-    margin: 0 18px;
     text-decoration: none;
     color: #111;
     font-weight: bold;
-    font-size: 0.85rem;
+    font-size: 0.78rem; /* smaller so everything fits */
     letter-spacing: 1px;
     text-transform: uppercase;
+    padding: 0 5px;
 }
 
+/* Divider between links */
 .main-nav a:not(:last-child)::after {
     content: "|";
-    margin-left: 18px;
+    margin-left: 10px;
     color: #777;
 }
 
+/* Hover effect */
 .main-nav a:hover {
     text-decoration: underline;
 }
