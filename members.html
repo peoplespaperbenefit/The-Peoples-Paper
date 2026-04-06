@@ -3,13 +3,10 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- Mobile responsiveness -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Page title -->
 <title>Members | The People's Paper</title>
 
-<!-- ===== FONTS (shared across site) ===== -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville&display=swap" rel="stylesheet">
 
 <style>
@@ -25,7 +22,7 @@ body {
 }
 
 /* =========================================================
-   ===== HEADER / MASTHEAD =====
+   ===== HEADER =====
    ========================================================= */
 header {
     background: white;
@@ -34,7 +31,176 @@ header {
     padding: 10px;
 }
 
-/* Top bar (date + issue info) */
+/* Top bar */
+.top-bar {
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #aaa;
+    padding: 5px 10px;
+}
+
+/* Masthead */
+h1.masthead {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    margin: 10px 0;
+    letter-spacing: 2px;
+}
+
+/* =========================================================
+   ===== NAVIGATION =====
+   ========================================================= */
+.main-nav {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 6px 0;
+    text-align: center;
+    background: #fdfcf7;
+}
+
+.main-nav a {
+    margin: 0 18px;
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.main-nav a:not(:last-child)::after {
+    content: "|";
+    margin-left: 18px;
+    color: #777;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   ===== MAIN CONTENT =====
+   ========================================================= */
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+/* Section titles */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    border-bottom: 2px solid black;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+/* Member blocks */
+.member {
+    border-top: 1px solid #aaa;
+    padding: 10px 0;
+}
+
+.member h3 {
+    margin: 5px 0;
+}
+
+.role {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.bio {
+    font-size: 0.9rem;
+}
+
+/* =========================================================
+   ===== FOOTER =====
+   ========================================================= */
+footer {
+    margin-top: 30px;
+    border-top: 2px solid black;
+    text-align: center;
+    padding: 15px;
+    background: white;
+    font-size: 0.8rem;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="top-bar">
+        <span>March 22, 2026</span>
+        <span>Vol. 1 No. 1</span>
+    </div>
+
+    <h1 class="masthead">THE PEOPLE'S PAPER</h1>
+
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="members.html" class="active">Members</a>
+        <a href="submission.html">Submit</a>
+        <a href="gallery.html">Art Gallery</a>
+    </nav>
+
+</header>
+
+<main>
+
+    <div class="section-title">Editorial Board</div>
+
+    <div class="member">
+        <h3>Prof. Type Snizzle</h3>
+        <div class="role">Editor-in-Chief</div>
+        <div class="bio">Leads editorial direction and oversees all published content.</div>
+    </div>
+
+    <div class="member">
+        <h3>Dr. Dirty Hizzle</h3>
+        <div class="role">Managing Editor</div>
+        <div class="bio">Coordinates publication schedule and contributor relations.</div>
+    </div>
+
+    <div class="section-title">Contributors</div>
+
+    <div class="member">
+        <h3>Staff Writer Name</h3>
+        <div class="role">Staff Writer</div>
+        <div class="bio">Covers local news and community events.</div>
+    </div>
+
+    <div class="member">
+        <h3>Columnist Name</h3>
+        <div class="role">Opinion Columnist</div>
+        <div class="bio">Writes weekly opinion pieces.</div>
+    </div>
+
+    <div class="section-title">Join The Paper</div>
+
+    <p>
+        Interested in contributing? Visit our submissions page to send in your work and become part of The People's Paper.
+    </p>
+
+    <p>
+        <a href="submission.html"><strong>Submit Your Work →</strong></a>
+    </p>
+
+</main>
+
+<footer>
+    © 2026 The People's Paper
+</footer>
+
+</body>
+</html>/* Top bar (date + issue info) */
 .top-bar {
     font-size: 0.8rem;
     display: flex;
