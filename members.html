@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
+<!-- Mobile responsiveness -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Page title -->
 <title>Members | The People's Paper</title>
 
+<!-- ===== FONTS (shared across site) ===== -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================================================
+   ===== GENERAL PAGE STYLING =====
+   ========================================================= */
 body {
     margin: 0;
     font-family: 'Libre Baskerville', serif;
@@ -15,13 +24,17 @@ body {
     color: #111;
 }
 
-/* Masthead */
+/* =========================================================
+   ===== HEADER / MASTHEAD =====
+   ========================================================= */
 header {
     background: white;
     border-bottom: 4px double black;
     text-align: center;
+    padding: 10px;
 }
 
+/* Top bar (date + issue info) */
 .top-bar {
     font-size: 0.8rem;
     display: flex;
@@ -30,11 +43,204 @@ header {
     padding: 5px 10px;
 }
 
-.masthead {
+/* Newspaper title */
+h1.masthead {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin: 10px 0;
+    letter-spacing: 2px;
+}
+
+/* Subtitle under masthead */
+.tagline {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   ===== NAVIGATION BAR (UNIFIED ACROSS SITE) =====
+   ========================================================= */
+.main-nav {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 6px 0;
+    text-align: center;
+    background: #fdfcf7;
+}
+
+/* Navigation links */
+.main-nav a {
+    margin: 0 18px;
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Divider between links */
+.main-nav a:not(:last-child)::after {
+    content: "|";
+    margin-left: 18px;
+    color: #777;
+}
+
+/* Hover effect */
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Active page highlight */
+.main-nav a.active {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   ===== MAIN CONTENT AREA =====
+   ========================================================= */
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+/* Section headers */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    border-bottom: 2px solid black;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+/* =========================================================
+   ===== MEMBER LIST BLOCKS =====
+   ========================================================= */
+.member {
+    border-top: 1px solid #aaa;
+    padding: 10px 0;
+}
+
+/* Member name */
+.member h3 {
+    margin: 5px 0;
+}
+
+/* Role title */
+.role {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Bio text */
+.bio {
+    font-size: 0.9rem;
+}
+
+/* =========================================================
+   ===== FOOTER =====
+   ========================================================= */
+footer {
+    margin-top: 30px;
+    border-top: 2px solid black;
+    text-align: center;
+    padding: 15px;
+    background: white;
+    font-size: 0.8rem;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     ===== HEADER SECTION =====
+     ========================================================= -->
+<header>
+
+    <!-- Top bar (edit date + issue number here) -->
+    <div class="top-bar">
+        <span>March 22, 2026</span>
+        <span>Vol. 1 No. 1</span>
+    </div>
+
+    <!-- Main title -->
+    <h1 class="masthead">THE PEOPLE'S PAPER</h1>
+
+    <!-- Subtitle -->
+    <div class="tagline">Independent Journalism for the Community</div>
+
+    <!-- ===== NAVIGATION MENU (COPY ACROSS ALL PAGES) ===== -->
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="members.html" class="active">Members</a>
+        <a href="submission.html">Submit</a>
+        <a href="gallery.html">Art Gallery</a>
+    </nav>
+
+</header>
+
+<!-- =========================================================
+     ===== MAIN CONTENT =====
+     ========================================================= -->
+<main>
+
+    <!-- ===== EDITORIAL BOARD ===== -->
+    <div class="section-title">Editorial Board</div>
+
+    <div class="member">
+        <h3>Prof. Type Snizzle</h3>
+        <div class="role">Editor-in-Chief</div>
+        <div class="bio">Leads editorial direction and oversees all published content.</div>
+    </div>
+
+    <div class="member">
+        <h3>Dr. Dirty Hizzle</h3>
+        <div class="role">Managing Editor</div>
+        <div class="bio">Coordinates publication schedule and contributor relations.</div>
+    </div>
+
+    <!-- ===== CONTRIBUTORS ===== -->
+    <div class="section-title">Contributors</div>
+
+    <div class="member">
+        <h3>Staff Writer Name</h3>
+        <div class="role">Staff Writer</div>
+        <div class="bio">Covers local news and community events.</div>
+    </div>
+
+    <div class="member">
+        <h3>Columnist Name</h3>
+        <div class="role">Opinion Columnist</div>
+        <div class="bio">Writes weekly opinion pieces.</div>
+    </div>
+
+    <!-- ===== CALL TO ACTION ===== -->
+    <div class="section-title">Join The Paper</div>
+
+    <p>
+        Interested in contributing? Visit our submissions page to send in your work and become part of The People's Paper.
+    </p>
+
+    <p>
+        <a href="submission.html"><strong>Submit Your Work →</strong></a>
+    </p>
+
+</main>
+
+<!-- =========================================================
+     ===== FOOTER =====
+     ========================================================= -->
+<footer>
+    © 2026 The People's Paper | All rights reserved
+</footer>
+
+</body>
+</html>    margin: 10px 0;
 }
 
 .tagline {
