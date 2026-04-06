@@ -1,40 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-
-<!-- Controls mobile responsiveness -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Page title (browser tab) -->
-<title>The People's Paper</title>
-
-<!-- ===== GOOGLE FONTS ===== -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville&display=swap" rel="stylesheet">
-
-<style>
-
 /* =========================================================
-   ===== GENERAL PAGE STYLING =====
+   ===== NAVIGATION BAR (SINGLE LINE FIXED) =====
    ========================================================= */
-body {
-    margin: 0;
-    font-family: 'Libre Baskerville', serif;
-    background: #f8f6f1;
+.main-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap; /* prevents wrapping */
+    gap: 14px;
+    padding: 6px 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    background: #fdfcf7;
+    white-space: nowrap;
+}
+
+/* Nav links */
+.main-nav a {
+    text-decoration: none;
     color: #111;
+    font-weight: bold;
+    font-size: 0.78rem; /* smaller so everything fits */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0 6px;
 }
 
-/* =========================================================
-   ===== HEADER / MASTHEAD =====
-   ========================================================= */
-header {
-    background: white;
-    border-bottom: 4px double black;
-    text-align: center;
-    padding: 10px;
+/* Divider between links */
+.main-nav a:not(:last-child)::after {
+    content: "|";
+    margin-left: 10px;
+    color: #777;
 }
 
-/* Top strip (date + issue number) */
+/* Hover */
+.main-nav a:hover {
+    text-decoration: underline;
+}/* Top strip (date + issue number) */
 .top-bar {
     font-size: 0.8rem;
     display: flex;
