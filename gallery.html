@@ -2,30 +2,39 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
+<!-- Controls mobile layout / responsiveness -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Page title (shown in browser tab) -->
 <title>Art Gallery | The People's Paper</title>
 
-<!-- Fonts -->
+<!-- ===== GOOGLE FONTS (Change fonts here if desired) ===== -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== GENERAL STYLING ===== */
+/* =========================================================
+   ===== GENERAL PAGE STYLING (applies to whole site) =====
+   ========================================================= */
 body {
-    margin: 0;
-    font-family: 'Libre Baskerville', serif;
-    background: #f8f6f1;
-    color: #111;
+    margin: 0; /* Removes default browser spacing */
+    font-family: 'Libre Baskerville', serif; /* Main body font */
+    background: #f8f6f1; /* Newspaper-style off-white */
+    color: #111; /* Main text color */
 }
 
-/* ===== HEADER ===== */
+/* =========================================================
+   ===== HEADER / MASTHEAD (top of page) =====
+   ========================================================= */
 header {
     background: white;
-    border-bottom: 4px double black;
+    border-bottom: 4px double black; /* Classic newspaper line */
     text-align: center;
     padding: 10px;
 }
 
+/* Top strip (date + issue number) */
 .top-bar {
     font-size: 0.8rem;
     display: flex;
@@ -34,6 +43,7 @@ header {
     padding: 5px 10px;
 }
 
+/* Main newspaper title */
 h1.masthead {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
@@ -42,12 +52,17 @@ h1.masthead {
     letter-spacing: 2px;
 }
 
+/* Small description under title */
 .tagline {
     font-size: 0.9rem;
     margin-bottom: 10px;
 }
 
-/* ===== NAVIGATION BAR ===== */
+/* =========================================================
+   ===== NAVIGATION BAR (shared across ALL pages) =====
+   - To add pages, duplicate a link below
+   - "active" class highlights current page
+   ========================================================= */
 .main-nav {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
@@ -56,6 +71,7 @@ h1.masthead {
     background: #fdfcf7;
 }
 
+/* Each navigation link */
 .main-nav a {
     margin: 0 18px;
     text-decoration: none;
@@ -64,71 +80,86 @@ h1.masthead {
     font-size: 0.85rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    position: relative;
 }
 
+/* Divider between links (| symbol) */
 .main-nav a:not(:last-child)::after {
     content: "|";
     margin-left: 18px;
     color: #777;
 }
 
+/* Hover effect */
 .main-nav a:hover {
     text-decoration: underline;
 }
 
+/* Current page highlight */
 .main-nav a.active {
     text-decoration: underline;
 }
 
-/* ===== MAIN CONTENT ===== */
+/* =========================================================
+   ===== MAIN CONTENT AREA =====
+   ========================================================= */
 main {
-    max-width: 1100px;
-    margin: auto;
+    max-width: 1100px; /* Controls page width */
+    margin: auto; /* Centers content */
     padding: 20px;
 }
 
+/* Page title ("Art Gallery") */
 .page-title {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     margin-bottom: 10px;
 }
 
+/* Intro paragraph under title */
 .gallery-intro {
     margin-bottom: 20px;
     font-size: 0.95rem;
 }
 
-/* ===== GALLERY GRID ===== */
+/* =========================================================
+   ===== GALLERY GRID (layout for images) =====
+   - Adjust column size by changing "250px"
+   ========================================================= */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
+/* Individual artwork card */
 .gallery-item {
     background: white;
     border: 1px solid #ccc;
     padding: 10px;
 }
 
+/* Artwork image */
 .gallery-item img {
     width: 100%;
     height: auto;
     display: block;
 }
 
+/* Artwork title */
 .gallery-item h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
     margin: 10px 0 5px;
 }
 
+/* Artist name / description */
 .gallery-item p {
     font-size: 0.85rem;
 }
 
-/* ===== FOOTER ===== */
+/* =========================================================
+   ===== FOOTER =====
+   ========================================================= */
 footer {
     margin-top: 30px;
     border-top: 2px solid black;
@@ -143,7 +174,12 @@ footer {
 
 <body>
 
+<!-- =========================================================
+     ===== HEADER SECTION =====
+     - Edit date, issue number, and tagline here
+     ========================================================= -->
 <header>
+
     <div class="top-bar">
         <span>March 22, 2026</span>
         <span>Vol. 1 No. 1</span>
@@ -155,24 +191,34 @@ footer {
         A public outlet for stories, ideas, interests, artwork and more...
     </div>
 
+    <!-- ===== NAVIGATION MENU ===== -->
+    <!-- Add new pages by copying a link -->
     <nav class="main-nav">
         <a href="store.html">Store</a>
         <a href="members.html">Members</a>
         <a href="submission.html">Submit</a>
         <a href="gallery.html" class="active">Art Gallery</a>
     </nav>
+
 </header>
 
+<!-- =========================================================
+     ===== MAIN PAGE CONTENT =====
+     ========================================================= -->
 <main>
 
+    <!-- Page title -->
     <div class="page-title">Art Gallery</div>
 
+    <!-- Short description -->
     <div class="gallery-intro">
         A curated collection of artwork submitted by the public. Photography, illustration, painting, and more.
     </div>
 
+    <!-- ===== GALLERY GRID ===== -->
     <div class="gallery-grid">
 
+        <!-- ===== ARTWORK ITEM (Copy this block to add more) ===== -->
         <div class="gallery-item">
             <img src="https://via.placeholder.com/400x300" alt="Artwork 1">
             <h3>Untitled Piece</h3>
@@ -201,94 +247,12 @@ footer {
 
 </main>
 
+<!-- =========================================================
+     ===== FOOTER =====
+     ========================================================= -->
 <footer>
     © 2026 The People's Paper | All rights reserved
 </footer>
 
 </body>
 </html>
-.tagline {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-}
-
-/* ===== NAVIGATION ===== */
-    <nav>
-        <a href="store.html">Store</a>
-        <a href="members.html">Members</a>
-        <a href="submission.html">Submit</a>
-        <a href="gallery.html">Art Gallery</a> <!-- NEW LINK ADDED -->
-    </nav>
-
-/* Highlight current page */
-nav a.active {
-    text-decoration: underline;
-}
-
-/* ===== MAIN CONTENT ===== */
-main {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* Page title */
-.page-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-}
-
-/* Intro text */
-.gallery-intro {
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-}
-
-/* ===== GALLERY GRID ===== */
-/* Adjust number of columns by changing minmax value */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* Each artwork card */
-.gallery-item {
-    background: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
-
-/* Image styling */
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Artwork title */
-.gallery-item h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    margin: 10px 0 5px;
-}
-
-/* Artist + description */
-.gallery-item p {
-    font-size: 0.85rem;
-}
-
-/* ===== FOOTER ===== */
-footer {
-    margin-top: 30px;
-    border-top: 2px solid black;
-    text-align: center;
-    padding: 15px;
-    background: white;
-    font-size: 0.8rem;
-}
-
-</style></head><body><header>
-    <div class="top-bar">
-        <span>March 22, 2026</span>
