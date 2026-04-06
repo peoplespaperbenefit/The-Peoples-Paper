@@ -1,21 +1,25 @@
-/* ---------- Global Newspaper Feel ---------- */
+/* =========================================================
+   ===== GLOBAL NEWSPAPER STYLE =====
+   ========================================================= */
 body {
+    margin: 0;
     font-family: "Georgia", "Times New Roman", serif;
     background-color: #f4f1ea; /* paper tone */
     color: #111;
-    margin: 0;
     line-height: 1.6;
 }
 
-/* ---------- Masthead ---------- */
+/* =========================================================
+   ===== MASTHEAD (SITE TITLE AREA) =====
+   ========================================================= */
 .masthead {
     background-color: #f4f1ea;
-    color: #111;
-    padding: 25px 10px 10px;
     text-align: center;
+    padding: 25px 10px 10px;
     border-bottom: 3px double #000;
 }
 
+/* Main title */
 .masthead h1 {
     font-size: 3rem;
     margin: 0;
@@ -23,18 +27,170 @@ body {
     text-transform: uppercase;
 }
 
+/* Subtitle under title */
 .masthead p {
     font-size: 0.9rem;
     margin: 5px 0 0;
     letter-spacing: 1px;
 }
 
-/* ---------- Navigation (like section bar) ---------- */
+/* =========================================================
+   ===== NAVIGATION BAR =====
+   ========================================================= */
 nav {
     display: flex;
     justify-content: center;
     gap: 30px;
     padding: 10px 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+nav a {
+    text-decoration: none;
+    color: #111;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   ===== FEATURED ARTICLE (TOP STORY) =====
+   ========================================================= */
+.featured-articles {
+    margin: 20px 0;
+    border-bottom: 2px solid #000;
+    padding-bottom: 15px;
+}
+
+.featured-articles h2 {
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.featured-articles p {
+    font-size: 1.1rem;
+}
+
+/* =========================================================
+   ===== MAIN NEWSPAPER LAYOUT (3 COLUMNS) =====
+   ========================================================= */
+main {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 15px;
+
+    column-count: 3; /* classic newspaper layout */
+    column-gap: 30px;
+}
+
+/* =========================================================
+   ===== ARTICLE STYLING =====
+   ========================================================= */
+article {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Article headline */
+article h2 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+/* Article text */
+article p {
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+/* Drop cap (first letter effect) */
+article p::first-letter {
+    float: left;
+    font-size: 2.5rem;
+    line-height: 1;
+    padding-right: 6px;
+    font-weight: bold;
+}
+
+/* =========================================================
+   ===== ARTICLE CARD STYLE (optional blocks) =====
+   ========================================================= */
+.article {
+    background-color: #fcfcf7;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 0 0 20px 0;
+}
+
+/* Card title */
+.article h3 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   ===== MULTI-COLUMN TEXT BLOCK (optional section) =====
+   ========================================================= */
+.multi-column {
+    column-count: 3;
+    column-gap: 20px;
+    margin: 20px 0;
+}
+
+/* =========================================================
+   ===== SUBMISSION CARD =====
+   ========================================================= */
+.submission-card {
+    border: 2px solid #333;
+    padding: 15px;
+    margin: 20px 0;
+    background-color: #fdfcf7;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submission-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+}
+
+/* =========================================================
+   ===== FOOTER =====
+   ========================================================= */
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 20px;
+    border-top: 1px solid #000;
+    margin-top: 30px;
+}
+
+/* =========================================================
+   ===== OPTIONAL NEWSPRINT TEXTURE =====
+   ========================================================= */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.01),
+        rgba(0,0,0,0.01) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+}    padding: 10px 0;
     border-bottom: 1px solid #000;
     border-top: 1px solid #000;
     font-size: 0.9rem;
