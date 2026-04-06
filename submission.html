@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
+<!-- Mobile responsiveness -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Page title -->
 <title>Submissions | The People's Paper</title>
 
+<!-- ===== FONTS (shared across site) ===== -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================================================
+   ===== GENERAL PAGE STYLING =====
+   ========================================================= */
 body {
     margin: 0;
     font-family: 'Libre Baskerville', serif;
@@ -15,13 +24,17 @@ body {
     color: #111;
 }
 
-/* Masthead */
+/* =========================================================
+   ===== HEADER / MASTHEAD =====
+   ========================================================= */
 header {
     background: white;
     border-bottom: 4px double black;
     text-align: center;
+    padding: 10px;
 }
 
+/* Top bar (date + issue info) */
 .top-bar {
     font-size: 0.8rem;
     display: flex;
@@ -30,11 +43,216 @@ header {
     padding: 5px 10px;
 }
 
-.masthead {
+/* Main newspaper title */
+h1.masthead {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin: 10px 0;
+    letter-spacing: 2px;
+}
+
+/* Subtitle */
+.tagline {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   ===== NAVIGATION BAR (UNIFIED ACROSS SITE) =====
+   ========================================================= */
+.main-nav {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 6px 0;
+    text-align: center;
+    background: #fdfcf7;
+}
+
+/* Navigation links */
+.main-nav a {
+    margin: 0 18px;
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Divider between links */
+.main-nav a:not(:last-child)::after {
+    content: "|";
+    margin-left: 18px;
+    color: #777;
+}
+
+/* Hover effect */
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Active page highlight */
+.main-nav a.active {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   ===== MAIN CONTENT AREA =====
+   ========================================================= */
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+/* Section title */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Intro text */
+.intro {
+    margin-bottom: 25px;
+}
+
+/* =========================================================
+   ===== SUBMISSION BOXES =====
+   ========================================================= */
+.submission-box {
+    border: 1px solid #aaa;
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Box title */
+.submission-box h3 {
+    font-family: 'Playfair Display', serif;
+    margin-top: 0;
+}
+
+/* =========================================================
+   ===== SUBMIT BUTTON =====
+   ========================================================= */
+.submit-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.submit-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* =========================================================
+   ===== FOOTER =====
+   ========================================================= */
+footer {
+    margin-top: 30px;
+    border-top: 2px solid black;
+    text-align: center;
+    padding: 15px;
+    background: white;
+    font-size: 0.8rem;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     ===== HEADER =====
+     ========================================================= -->
+<header>
+
+    <!-- Top bar (edit date + issue number here) -->
+    <div class="top-bar">
+        <span>March 22, 2026</span>
+        <span>Vol. 1 No. 1</span>
+    </div>
+
+    <!-- Main title -->
+    <h1 class="masthead">THE PEOPLE'S PAPER</h1>
+
+    <!-- Subtitle -->
+    <div class="tagline">Independent Journalism for the Community</div>
+
+    <!-- ===== NAVIGATION (COPY ACROSS ALL PAGES) ===== -->
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="members.html">Members</a>
+        <a href="submission.html" class="active">Submit</a>
+        <a href="gallery.html">Art Gallery</a>
+    </nav>
+
+</header>
+
+<!-- =========================================================
+     ===== MAIN CONTENT =====
+     ========================================================= -->
+<main>
+
+    <!-- Section title -->
+    <div class="section-title">Submissions Desk</div>
+
+    <!-- Intro text -->
+    <p class="intro">
+        The People's Paper accepts submissions from writers, journalists, and community members.
+        Choose an option below to submit your work.
+    </p>
+
+    <!-- =====================================================
+         ===== GENERAL SUBMISSION =====
+         ===================================================== -->
+    <div class="submission-box">
+        <h3>General Submission</h3>
+        <p>Submit articles, opinion pieces, or community stories with your name attached.</p>
+
+        <a class="submit-btn"
+           href="https://forms.gle/FVAbZLBD7H6CoRZ6A"
+           target="_blank">
+            Submit Article →
+        </a>
+    </div>
+
+    <!-- =====================================================
+         ===== ANONYMOUS SUBMISSION =====
+         ===================================================== -->
+    <div class="submission-box">
+        <h3>Anonymous Submission</h3>
+        <p>For confidential tips, whistleblowing, or anonymous contributions.</p>
+
+        <a class="submit-btn"
+           href="https://forms.gle/A9QUd8rNNerbVYW68"
+           target="_blank">
+            Submit Anonymously →
+        </a>
+    </div>
+
+</main>
+
+<!-- =========================================================
+     ===== FOOTER =====
+     ========================================================= -->
+<footer>
+    © 2026 The People's Paper | All rights reserved
+</footer>
+
+</body>
+</html>    margin: 10px 0;
 }
 
 .tagline {
