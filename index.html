@@ -6,15 +6,17 @@
 <!-- Controls mobile responsiveness -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Page title (browser tab) -->
 <title>The People's Paper</title>
 
-<!-- Fonts: Change these if you want a different newspaper "feel" -->
+<!-- ===== GOOGLE FONTS ===== -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== GENERAL PAGE STYLING ===== */
-/* Change background or default text styling here */
+/* =========================================================
+   ===== GENERAL PAGE STYLING =====
+   ========================================================= */
 body {
     margin: 0;
     font-family: 'Libre Baskerville', serif;
@@ -22,8 +24,9 @@ body {
     color: #111;
 }
 
-/* ===== HEADER / MASTHEAD ===== */
-/* This is the top banner with title + nav */
+/* =========================================================
+   ===== HEADER / MASTHEAD =====
+   ========================================================= */
 header {
     background: white;
     border-bottom: 4px double black;
@@ -35,6 +38,255 @@ header {
 .top-bar {
     font-size: 0.8rem;
     display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #aaa;
+    padding: 5px 10px;
+}
+
+/* Main newspaper title */
+h1.masthead {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    margin: 10px 0;
+    letter-spacing: 2px;
+}
+
+/* Subtitle under title */
+.tagline {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   ===== NAVIGATION BAR (MATCHES ALL PAGES) =====
+   ========================================================= */
+.main-nav {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 6px 0;
+    text-align: center;
+    background: #fdfcf7;
+}
+
+.main-nav a {
+    margin: 0 18px;
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Divider between links */
+.main-nav a:not(:last-child)::after {
+    content: "|";
+    margin-left: 18px;
+    color: #777;
+}
+
+/* Hover effect */
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Active page (homepage = no highlight OR add if you want) */
+.main-nav a.active {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   ===== MAIN CONTENT AREA =====
+   ========================================================= */
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* =========================================================
+   ===== FEATURED STORY (TOP HEADLINE) =====
+   ========================================================= */
+.lead-story {
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+
+.lead-story h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.lead-story p {
+    font-size: 1rem;
+}
+
+/* =========================================================
+   ===== GRID LAYOUT (NEWSPAPER COLUMNS) =====
+   ========================================================= */
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* Left column is wider */
+    gap: 20px;
+}
+
+/* =========================================================
+   ===== ARTICLE BLOCKS =====
+   ========================================================= */
+article {
+    border-top: 1px solid #999;
+    padding-top: 10px;
+}
+
+article h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 5px 0;
+    font-size: 1.2rem;
+}
+
+article p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* =========================================================
+   ===== SIDEBAR =====
+   ========================================================= */
+.sidebar {
+    border-left: 1px solid #ccc;
+    padding-left: 15px;
+}
+
+/* Section titles */
+.section-title {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+    padding-bottom: 3px;
+}
+
+/* =========================================================
+   ===== FOOTER =====
+   ========================================================= */
+footer {
+    margin-top: 30px;
+    border-top: 2px solid black;
+    text-align: center;
+    padding: 15px;
+    background: white;
+    font-size: 0.8rem;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     ===== HEADER =====
+     ========================================================= -->
+<header>
+
+    <div class="top-bar">
+        <span>April 20, 2026</span>
+        <span>Vol. 1 No. 1</span>
+    </div>
+
+    <h1 class="masthead">THE PEOPLE'S PAPER</h1>
+
+    <div class="tagline">
+        A public outlet for stories, ideas, interests, artwork and more...
+    </div>
+
+    <!-- ===== NAVIGATION (COPY THIS TO ALL PAGES) ===== -->
+    <nav class="main-nav">
+        <a href="store.html">Store</a>
+        <a href="members.html">Members</a>
+        <a href="submission.html">Submit</a>
+        <a href="gallery.html">Art Gallery</a>
+    </nav>
+
+</header>
+
+<!-- =========================================================
+     ===== MAIN CONTENT =====
+     ========================================================= -->
+<main>
+
+<!-- ===== FEATURED STORY ===== -->
+<section class="lead-story">
+
+    <!-- Headline -->
+    <h2>A Green Issue</h2>
+
+    <!-- Subheadline -->
+    <p><strong>Where does the public stand on Marijuana? We asked 200 people what they think. The results are blunt...</strong></p>
+
+    <!-- Article preview -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is your front-page feature story.</p>
+
+</section>
+
+<!-- ===== NEWSPAPER GRID ===== -->
+<div class="grid">
+
+    <!-- ===== LEFT COLUMN (MAIN NEWS) ===== -->
+    <div>
+
+        <div class="section-title">Local News</div>
+
+        <!-- Copy this article block to add more -->
+        <article>
+            <h3>City Council Debates New Ordinance</h3>
+            <p>Short summary of the story...</p>
+        </article>
+
+        <article>
+            <h3>School Board Updates Policy</h3>
+            <p>Short summary of the story...</p>
+        </article>
+
+    </div>
+
+    <!-- ===== MIDDLE COLUMN ===== -->
+    <div>
+
+        <div class="section-title">Opinion</div>
+
+        <article>
+            <h3>Voices From the Community</h3>
+            <p>Short summary...</p>
+        </article>
+
+    </div>
+
+    <!-- ===== RIGHT COLUMN (SIDEBAR) ===== -->
+    <div class="sidebar">
+
+        <div class="section-title">Culture</div>
+
+        <article>
+            <h3>Local Art Scene Growing</h3>
+            <p>Short summary...</p>
+        </article>
+
+    </div>
+
+</div>
+
+</main>
+
+<!-- =========================================================
+     ===== FOOTER =====
+     ========================================================= -->
+<footer>
+    © 2026 The People's Paper | All rights reserved
+</footer>
+
+</body>
+</html>    display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #aaa;
     padding: 5px 10px;
