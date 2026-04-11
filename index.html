@@ -2,7 +2,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The People's Paper</title><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville&display=swap" rel="stylesheet"><style>
+<title>The People's Paper</title><!-- FONTS --><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville&display=swap" rel="stylesheet"><style>
+/* ================= GLOBAL STYLES ================= */
 body {
     margin: 0;
     font-family: 'Libre Baskerville', serif;
@@ -10,6 +11,7 @@ body {
     color: #111;
 }
 
+/* ================= HEADER ================= */
 header {
     background: white;
     border-bottom: 4px double black;
@@ -17,6 +19,7 @@ header {
     padding: 10px;
 }
 
+/* Top info bar (date + volume) */
 .top-bar {
     font-size: 0.8rem;
     display: flex;
@@ -25,6 +28,7 @@ header {
     padding: 5px 10px;
 }
 
+/* Main title */
 h1.masthead {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
@@ -33,11 +37,13 @@ h1.masthead {
     letter-spacing: 2px;
 }
 
+/* Tagline under title */
 .tagline {
     font-size: 0.9rem;
     margin-bottom: 10px;
 }
 
+/* ================= NAVIGATION ================= */
 .main-nav {
     display: flex;
     justify-content: center;
@@ -59,25 +65,29 @@ h1.masthead {
     padding: 0 6px;
 }
 
+/* Divider between nav items */
 .main-nav a:not(:last-child)::after {
     content: "|";
     margin-left: 10px;
     color: #777;
 }
 
+/* ================= MAIN LAYOUT ================= */
 main {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
 }
 
-/* Newspaper grid */
+/* 3-column newspaper grid */
 .layout {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 20px;
 }
 
+/* ================= LEAD STORY ================= */
+/* Full width top story */
 .lead-story {
     grid-column: 1 / -1;
     border-bottom: 3px double black;
@@ -90,11 +100,13 @@ main {
     margin: 0 0 5px 0;
 }
 
+/* ================= SECTIONS ================= */
 .section {
     border-top: 1px solid #999;
     padding-top: 10px;
 }
 
+/* Section headers */
 .section-title {
     font-weight: bold;
     border-bottom: 2px solid black;
@@ -104,22 +116,26 @@ main {
     font-size: 0.85rem;
 }
 
+/* Article titles */
 article h3 {
     font-family: 'Playfair Display', serif;
     margin: 5px 0;
     font-size: 1.2rem;
 }
 
+/* Article body text */
 article p {
     font-size: 0.9rem;
     line-height: 1.4;
 }
 
+/* Right column styling */
 .sidebar {
     border-left: 1px solid #ccc;
     padding-left: 15px;
 }
 
+/* ================= FOOTER ================= */
 footer {
     margin-top: 30px;
     border-top: 2px solid black;
@@ -128,112 +144,122 @@ footer {
     background: white;
     font-size: 0.8rem;
 }
-</style></head><body><header>
-<div class="top-bar">
+</style></head><body><header><!-- TOP BAR --><div class="top-bar">
 <span>April 20, 2026</span>
 <span>Vol. 1 No. 1</span>
-</div><h1 class="masthead">THE PEOPLE'S PAPER</h1><div class="tagline">
+</div><!-- MASTHEAD --><h1 class="masthead">THE PEOPLE'S PAPER</h1><!-- TAGLINE --><div class="tagline">
 A new worldly journal, written and maintained by every day people.
-</div><nav class="main-nav">
+</div><!-- NAVIGATION --><nav class="main-nav">
 <a href="index.html">Home</a>
 <a href="store.html">Store</a>
 <a href="members.html">Members</a>
 <a href="submission.html">Submit</a>
 <a href="gallery.html">Art Gallery</a>
-</nav>
-</header><main><div class="layout"><!-- AROUND THE WORLD --><section class="lead-story">
+</nav></header><main><div class="layout"><!-- ================= LEAD STORY ================= --><section class="lead-story">
 <h2>AROUND THE WORLD</h2>
 <p><strong>PP Ad</strong></p>
-</section><!-- COLUMN 1 --><div><div class="section">
+</section><!-- ================= COLUMN 1 ================= --><div><!-- Peoples Story --><div class="section">
 <div class="section-title">The Peoples Story</div>
 <article>
 <h3>Woman in Dover</h3>
 </article>
-</div><div class="section">
+</div><!-- Illusions --><div class="section">
 <div class="section-title">Illusions of Grandure</div>
 <article>
 <h3>Tatsuma</h3>
 </article>
-</div><div class="section">
+</div><!-- Food --><div class="section">
 <div class="section-title">Food Worth the Travel</div>
 <article>
 <h3>PP Team Review</h3>
 </article>
-</div><div class="section">
+</div><!-- Elder --><div class="section">
 <div class="section-title">Elder</div>
 <article>
 <h3>The Will to Live, a Holocaust Survivors Experience</h3>
 </article>
-</div><div class="section">
+</div><!-- Poems --><div class="section">
 <div class="section-title">Poem</div>
 <article>
-<p>Blurry Face<br>Sorcery of Meth<br>Hold The Light Steady<br>Cheers to 30!<br>t6777</p>
+<p>
+Blurry Face<br>
+Sorcery of Meth<br>
+Hold The Light Steady<br>
+Cheers to 30!<br>
+t6777
+</p>
 </article>
-</div><div class="section">
+</div><!-- Music --><div class="section">
 <div class="section-title">Music</div>
 <article>
 <h3>Find Me At The Rail</h3>
 </article>
-</div></div><!-- COLUMN 2 --><div><div class="section">
+</div></div><!-- ================= COLUMN 2 ================= --><div><!-- Big Brain --><div class="section">
 <div class="section-title">Big Brain</div>
 <article>
 <h3>Delilah</h3>
 </article>
-</div><div class="section">
+</div><!-- History --><div class="section">
 <div class="section-title">History</div>
 <article>
 <h3>Thadious Stevens</h3>
 </article>
-</div><div class="section">
+</div><!-- Youth --><div class="section">
 <div class="section-title">Youth</div>
 <article>
 <h3>Learning the Party</h3>
 <p>DnD</p>
 </article>
-</div><div class="section">
+</div><!-- Issue --><div class="section">
 <div class="section-title">Issue of the Issue</div>
 <article>
 <h3>Weed Poll Results</h3>
 </article>
-</div><div class="section">
+</div><!-- New Scene --><div class="section">
 <div class="section-title">New on the Scene</div>
 <article>
 <h3>LOVERMiND</h3>
 </article>
-</div><div class="section">
+</div><!-- Homeless --><div class="section">
 <div class="section-title">Homeless 10</div>
 <article>
 <h3>PP Exclusive</h3>
 <p>Vance Park Tent City</p>
 </article>
-</div></div><!-- COLUMN 3 (SIDEBAR STYLE) --><div class="sidebar"><div class="section">
+</div></div><!-- ================= COLUMN 3 (SIDEBAR) ================= --><div class="sidebar"><!-- Small Business --><div class="section">
 <div class="section-title">Small Business</div>
 <article>
 <h3>Because It’s a Lion</h3>
 </article>
-</div><div class="section">
+</div><!-- Ghost --><div class="section">
 <div class="section-title">Ghost</div>
 <article>
 <h3>Andy Charles Anderson</h3>
 <p>Ghost Hunter</p>
 </article>
-</div><div class="section">
+</div><!-- NSFW --><div class="section">
 <div class="section-title">NSFW</div>
 <article>
 <h3>Is Polyamory a crock of shit or a Pot of gold?</h3>
 </article>
-</div><div class="section">
+</div><!-- Sports --><div class="section">
 <div class="section-title">Sports</div>
 <article>
 <h3>Cameron</h3>
 <p>River Chasers</p>
 </article>
-</div><div class="section">
+</div><!-- Website section --><div class="section">
 <div class="section-title">Website</div>
 <article>
-<p>Vinyl Records Spinning Back to Mainstream<br>Chelsea King<br>Fake Email<br>Smegma<br>Welcome to the Jungle</p>
+<p>
+Vinyl Records Spinning Back to Mainstream<br>
+Chelsea King<br>
+Fake Email<br>
+Smegma<br>
+Welcome to the Jungle
+</p>
 </article>
-</div></div></div></main><footer>
+</div></div></div></main><!-- ================= FOOTER ================= --><footer>
 © 2026 The People's Paper | All rights reserved
 </footer></body>
 </html>
