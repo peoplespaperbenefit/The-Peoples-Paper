@@ -2,42 +2,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The People's Paper</title><!-- =========================================================
-     FONTS
-     - Playfair Display → Headlines
-     - Libre Baskerville → Body text
-     ========================================================= --><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville&display=swap" rel="stylesheet"><style>
+<title>The People's Paper</title>
 
-/* =========================================================
-   GLOBAL STYLES
-   ========================================================= */
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= GLOBAL ================= */
 body {
-    margin: 0; /* remove default browser margin */
-    font-family: 'Libre Baskerville', serif; /* body font */
-    background: #f8f6f1; /* newspaper tone */
-    color: #111; /* ink color */
+    margin: 0;
+    font-family: 'Libre Baskerville', serif;
+    background: #f8f6f1;
+    color: #111;
 }
 
-/* =========================================================
-   HEADER (ENTIRE TOP AREA)
-   ========================================================= */
+/* ================= HEADER ================= */
 header {
     background: white;
-    border-bottom: 4px double black; /* newspaper divider */
+    border-bottom: 4px double black;
     text-align: center;
     padding: 10px;
 }
 
-/* --- TOP BAR (DATE + ISSUE INFO) --- */
 .top-bar {
     font-size: 0.8rem;
-    display: flex; /* horizontal layout */
-    justify-content: space-between; /* push edges */
+    display: flex;
+    justify-content: space-between;
     border-bottom: 1px solid #aaa;
     padding: 5px 10px;
 }
 
-/* --- MASTHEAD (TITLE) --- */
 h1.masthead {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
@@ -46,27 +40,23 @@ h1.masthead {
     letter-spacing: 2px;
 }
 
-/* --- TAGLINE --- */
 .tagline {
     font-size: 0.9rem;
     margin-bottom: 10px;
 }
 
-/* =========================================================
-   NAVIGATION BAR
-   ========================================================= */
+/* ================= NAV ================= */
 .main-nav {
-    display: flex; /* row layout */
-    justify-content: center; /* center nav */
-    gap: 14px; /* spacing between links */
+    display: flex;
+    justify-content: center;
+    gap: 14px;
     padding: 6px 10px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     background: #fdfcf7;
-    white-space: nowrap; /* prevents wrapping */
+    white-space: nowrap;
 }
 
-/* --- NAV LINKS --- */
 .main-nav a {
     text-decoration: none;
     color: #111;
@@ -77,41 +67,28 @@ h1.masthead {
     padding: 0 6px;
 }
 
-/* --- NAV DIVIDERS (|) --- */
 .main-nav a:not(:last-child)::after {
     content: "|";
     margin-left: 10px;
     color: #777;
 }
 
-/* =========================================================
-   MAIN CONTENT WRAPPER
-   ========================================================= */
+/* ================= MAIN ================= */
 main {
-    max-width: 1200px; /* page width */
-    margin: auto; /* center */
+    max-width: 1200px;
+    margin: auto;
     padding: 20px;
 }
 
-/* =========================================================
-   GRID SYSTEM (CORE LAYOUT ENGINE)
-   - 3 columns
-   - Left is wider (feature content)
-   - Right is tighter (sidebar feel)
-   ========================================================= */
 .layout {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 20px;
 }
 
-/* =========================================================
-   LEAD STORY (TOP HEADLINE)
-   - spans all columns
-   - first thing reader sees
-   ========================================================= */
+/* ================= LEAD ================= */
 .lead-story {
-    grid-column: 1 / -1; /* FULL WIDTH */
+    grid-column: 1 / -1;
     border-bottom: 3px double black;
     padding-bottom: 10px;
 }
@@ -119,28 +96,22 @@ main {
 .lead-story h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.8rem;
-    margin: 0 0 5px 0;
 }
 
-/* Signature line under lead story */
 .signature {
     margin-top: 10px;
-    font-size: 0.9rem; /* keep similar size */
-    font-style: italic; /* subtle distinction */
-    text-align: right; /* newspaper-style signoff */
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: right;
 }
 
-/* =========================================================
-   SECTION BLOCK (REUSABLE UNIT)
-   - every category uses this
-   ========================================================= */
+/* ================= SECTIONS ================= */
 .section {
     border-top: 1px solid #999;
     padding-top: 10px;
-    margin-bottom: 15px; /* spacing between sections */
+    margin-bottom: 15px;
 }
 
-/* --- SECTION LABEL (CATEGORY NAME) --- */
 .section-title {
     font-weight: bold;
     border-bottom: 2px solid black;
@@ -150,30 +121,101 @@ main {
     font-size: 0.85rem;
 }
 
-/* --- ARTICLE TITLE --- */
 article h3 {
     font-family: 'Playfair Display', serif;
     margin: 5px 0;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
-/* --- ARTICLE TEXT --- */
+article h3:hover {
+    text-decoration: underline;
+}
+
 article p {
     font-size: 0.9rem;
     line-height: 1.4;
 }
 
-/* =========================================================
-   SIDEBAR (RIGHT COLUMN ONLY)
-   ========================================================= */
 .sidebar {
     border-left: 1px solid #ccc;
     padding-left: 15px;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* ================= PAPER OVERLAY ================= */
+.paper-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.paper {
+  position: relative;
+  background: #fdfbf7;
+  width: 85%;
+  max-width: 900px;
+  height: 85%;
+  padding: 40px;
+  overflow-y: auto;
+  box-shadow: 0 0 40px rgba(0,0,0,0.5);
+  border: 1px solid #ddd;
+
+  transform: scale(0.7) rotateX(20deg);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+/* paper texture */
+.paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.02),
+    rgba(0,0,0,0.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+}
+
+.paper-overlay.active {
+  display: flex;
+}
+
+.paper-overlay.active .paper {
+  transform: scale(1) rotateX(0deg);
+  opacity: 1;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* columns inside story */
+#paperContent {
+  column-count: 2;
+  column-gap: 40px;
+}
+
+#paperContent h1 {
+  column-span: all;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ================= FOOTER ================= */
 footer {
     margin-top: 30px;
     border-top: 2px solid black;
@@ -183,126 +225,98 @@ footer {
     font-size: 0.8rem;
 }
 
-</style></head><body><!-- =========================================================
-     HEADER START
-     ========================================================= --><header><!-- DATE + ISSUE INFO --><div class="top-bar">
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="top-bar">
 <span>April 20, 2026</span>
 <span>Vol. 1 No. 1</span>
-</div><!-- NEWSPAPER TITLE --><h1 class="masthead">THE PEOPLE'S PAPER</h1><!-- TAGLINE --><div class="tagline">
+</div>
+
+<h1 class="masthead">THE PEOPLE'S PAPER</h1>
+
+<div class="tagline">
 A new worldly journal, written and maintained by every day people.
-</div><!-- NAVIGATION MENU --><nav class="main-nav">
-<a href="index.html">Home</a>
-<a href="store.html">Store</a>
-<a href="members.html">Members</a>
-<a href="submission.html">Submit</a>
-<a href="gallery.html">Art Gallery</a>
-</nav></header><!-- =========================================================
-     HEADER END
-     ========================================================= --><main><!-- =========================================================
-     GRID LAYOUT START
-     ========================================================= --><div class="layout"><!-- ================= LEAD STORY ================= --><section class="lead-story">
-<h2>AROUND THE WORLD</h2><p><strong>
-This section, along with many others, are still in need of a writer. The People's Paper is written and maintained by ordinary people. Please consider contributing your words to this public journal. A physical copy is made available to all those who would enjoy one. Submit anonymously, or with credit, and enjoy a contributor profile on our contributors page (optional). Submit any content you'd like to see published in the People's Paper with our submissions tab. Thanks to all who helped put this first issue together. We aim to publish 4 issues this year, so join in now to see your work in issue #2.      Enjoy.
-</strong></p><p class="signature">~ The People's Paper</p>
-</section><!-- =========================================================
-     COLUMN 1 START (PRIMARY STORIES)
-     ========================================================= --><div><!-- SECTION BLOCK START --><div class="section">
+</div>
+
+<nav class="main-nav">
+<a href="#">Home</a>
+<a href="#">Store</a>
+<a href="#">Members</a>
+<a href="#">Submit</a>
+<a href="#">Art Gallery</a>
+</nav>
+</header>
+
+<main>
+
+<div class="layout">
+
+<section class="lead-story">
+<h2>AROUND THE WORLD</h2>
+<p><strong>
+This section, along with many others, are still in need of a writer...
+</strong></p>
+<p class="signature">~ The People's Paper</p>
+</section>
+
+<div>
+<div class="section">
 <div class="section-title">The Peoples Story</div>
 <article>
-<h3>Woman in Dover</h3>
+<h3 onclick="openPaper(storyDover)">Woman in Dover</h3>
 </article>
 </div>
-<!-- SECTION BLOCK END --><div class="section">
-<div class="section-title">Illusions of Grandure</div>
-<article>
-<h3>Tatsuma</h3>
-</article>
-</div><div class="section">
-<div class="section-title">Food Worth the Travel</div>
-<article>
-<h3>PP Team Review</h3>
-</article>
-</div><div class="section">
-<div class="section-title">Elder</div>
-<article>
-<h3>The Will to Live, a Holocaust Survivors Experience</h3>
-</article>
-</div><div class="section">
-<div class="section-title">Poem</div>
-<article>
-<p>Poem list...</p>
-</article>
-</div><div class="section">
-<div class="section-title">Music</div>
-<article>
-<h3>Find Me At The Rail</h3>
-</article>
-</div></div>
-<!-- COLUMN 1 END --><!-- =========================================================
-     COLUMN 2 START (SECONDARY STORIES)
-     ========================================================= --><div><div class="section">
-<div class="section-title">Big Brain</div>
-<article>
-<h3>Delilah</h3>
-</article>
-</div><div class="section">
-<div class="section-title">History</div>
-<article>
-<h3>Thadious Stevens</h3>
-</article>
-</div><div class="section">
-<div class="section-title">Youth</div>
-<article>
-<h3>Learning the Party</h3>
-</article>
-</div><div class="section">
-<div class="section-title">Issue of the Issue</div>
-<article>
-<h3>Weed Poll Results</h3>
-</article>
-</div><div class="section">
-<div class="section-title">New on the Scene</div>
-<article>
-<h3>LOVERMiND</h3>
-</article>
-</div><div class="section">
-<div class="section-title">Homeless 10</div>
-<article>
-<h3>PP Exclusive</h3>
-</article>
-</div></div>
-<!-- COLUMN 2 END --><!-- =========================================================
-     COLUMN 3 START (SIDEBAR)
-     ========================================================= --><div class="sidebar"><div class="section">
-<div class="section-title">Small Business</div>
-<article>
-<h3>Because It’s a Lion</h3>
-</article>
-</div><div class="section">
-<div class="section-title">Ghost</div>
-<article>
-<h3>Andy Charles Anderson</h3>
-</article>
-</div><div class="section">
-<div class="section-title">NSFW</div>
-<article>
-<h3>Discussion piece</h3>
-</article>
-</div><div class="section">
-<div class="section-title">Sports</div>
-<article>
-<h3>Cameron</h3>
-</article>
-</div><div class="section">
-<div class="section-title">Website</div>
-<article>
-<p>Links list...</p>
-</article>
-</div></div>
-<!-- COLUMN 3 END --></div>
-<!-- GRID END --></main><!-- =========================================================
-     FOOTER
-     ========================================================= --><footer>
-© 2026 The People's Paper | All rights reserved
-</footer></body>
+</div>
+
+<div></div>
+<div class="sidebar"></div>
+
+</div>
+</main>
+
+<footer>
+© 2026 The People's Paper
+</footer>
+
+<!-- PAPER OVERLAY -->
+<div id="paperOverlay" class="paper-overlay">
+  <div class="paper">
+    <span class="close-btn" onclick="closePaper()">×</span>
+    <div id="paperContent"></div>
+  </div>
+</div>
+
+<script>
+function openPaper(content) {
+  document.getElementById("paperContent").innerHTML = content;
+  document.getElementById("paperOverlay").classList.add("active");
+}
+
+function closePaper() {
+  document.getElementById("paperOverlay").classList.remove("active");
+}
+
+/* STORY CONTENT */
+const storyDover = `
+<h1>Woman in Dover</h1>
+
+<p>The woman in Dover</p>
+
+<p>In August of 2025 I was working at GardaWorld security... The van looked fine to me, so I didn't fill out the incident report.</p>
+
+<p>In late August 2025 I couldn't find a job quickly to keep my apartment... I have been staying on my sister's land to this day.</p>
+
+<p>In early September, 2025 I felt pain like mini knifes stabbing my feet... The pain went away for two months.</p>
+
+<p>In early December, 2025 the pain in my feet came back... Both feet had plantar fasciitis and my left foot had heel spurs.</p>
+
+<p>From January to the present day, I have been applying to jobs... My channel is KirstienB on YouTube.</p>
+`;
+</script>
+
+</body>
 </html>
