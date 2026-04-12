@@ -4,37 +4,43 @@
 body {
     margin: 0;
     font-family: "Georgia", "Times New Roman", serif;
-    background-color: #f4f1ea; /* paper tone */
+    background-color: #f4f1ea;
     color: #111;
     line-height: 1.6;
+    font-size: clamp(16px, 2.5vw, 18px);
 }
 
-article p {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    color: #333;
-    margin-top: 4px;
+/* Optional newsprint texture */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.01),
+        rgba(0,0,0,0.01) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
 }
 
 /* =========================================================
-   ===== MASTHEAD (SITE TITLE AREA) =====
+   ===== MASTHEAD =====
    ========================================================= */
 .masthead {
-    background-color: #f4f1ea;
     text-align: center;
     padding: 25px 10px 10px;
     border-bottom: 3px double #000;
 }
 
-/* Main title */
 .masthead h1 {
-    font-size: 3rem;
+    font-size: clamp(28px, 5vw, 56px);
     margin: 0;
     letter-spacing: 3px;
     text-transform: uppercase;
 }
 
-/* Subtitle under title */
 .masthead p {
     font-size: 0.9rem;
     margin: 5px 0 0;
@@ -42,52 +48,56 @@ article p {
 }
 
 /* =========================================================
-   ===== NAVIGATION BAR (SINGLE LINE + FITS ALL LINKS) =====
+   ===== NAVIGATION =====
    ========================================================= */
 .main-nav {
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap; /* prevents wrapping */
     gap: 12px;
     padding: 6px 10px;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     background: #fdfcf7;
-    white-space: nowrap;
 }
 
-/* Navigation links */
 .main-nav a {
     text-decoration: none;
     color: #111;
     font-weight: bold;
-    font-size: 0.78rem; /* smaller so everything fits */
+    font-size: 0.78rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 0 5px;
 }
 
-/* Divider between links */
 .main-nav a:not(:last-child)::after {
     content: "|";
     margin-left: 10px;
     color: #777;
 }
 
-/* Hover effect */
-.main-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Active page */
+.main-nav a:hover,
 .main-nav a.active {
     text-decoration: underline;
 }
+
 /* =========================================================
-   ===== FEATURED ARTICLE (TOP STORY) =====
+   ===== MAIN LAYOUT (NEWSPAPER COLUMNS) =====
+   ========================================================= */
+main {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 15px;
+
+    column-count: 3;
+    column-gap: 30px;
+}
+
+/* =========================================================
+   ===== FEATURED ARTICLE =====
    ========================================================= */
 .featured-articles {
-    margin: 20px 0;
+    column-span: all;
+    margin-bottom: 20px;
     border-bottom: 2px solid #000;
     padding-bottom: 15px;
 }
@@ -102,19 +112,7 @@ article p {
 }
 
 /* =========================================================
-   ===== MAIN NEWSPAPER LAYOUT (3 COLUMNS) =====
-   ========================================================= */
-main {
-    max-width: 1100px;
-    margin: 20px auto;
-    padding: 0 15px;
-
-    column-count: 3; /* classic newspaper layout */
-    column-gap: 30px;
-}
-
-/* =========================================================
-   ===== ARTICLE STYLING =====
+   ===== ARTICLES =====
    ========================================================= */
 article {
     break-inside: avoid;
@@ -123,19 +121,17 @@ article {
     border-bottom: 1px solid #ccc;
 }
 
-/* Article headline */
 article h2 {
     font-size: 1.4rem;
     margin-bottom: 5px;
 }
 
-/* Article text */
 article p {
     font-size: 0.95rem;
     text-align: justify;
 }
 
-/* Drop cap (first letter effect) */
+/* Drop cap */
 article p::first-letter {
     float: left;
     font-size: 2.5rem;
@@ -145,16 +141,15 @@ article p::first-letter {
 }
 
 /* =========================================================
-   ===== ARTICLE CARD STYLE (optional blocks) =====
+   ===== ARTICLE CARDS =====
    ========================================================= */
 .article {
     background-color: #fcfcf7;
     border: 1px solid #ddd;
     padding: 15px;
-    margin: 0 0 20px 0;
+    margin-bottom: 20px;
 }
 
-/* Card title */
 .article h3 {
     border-bottom: 1px solid #ccc;
     padding-bottom: 5px;
@@ -162,7 +157,7 @@ article p::first-letter {
 }
 
 /* =========================================================
-   ===== MULTI-COLUMN TEXT BLOCK (optional section) =====
+   ===== MULTI-COLUMN SECTION =====
    ========================================================= */
 .multi-column {
     column-count: 3;
@@ -179,12 +174,25 @@ article p::first-letter {
     margin: 20px 0;
     background-color: #fdfcf7;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: 0.2s;
 }
 
 .submission-card:hover {
     transform: translateY(-3px);
     box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+}
+
+/* =========================================================
+   ===== IMAGES & GENERAL =====
+   ========================================================= */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a, button {
+    padding: 10px 12px;
+    display: inline-block;
 }
 
 /* =========================================================
@@ -199,230 +207,42 @@ footer {
 }
 
 /* =========================================================
-   ===== OPTIONAL NEWSPRINT TEXTURE =====
+   ===== 📱 RESPONSIVE DESIGN (FIXED) =====
    ========================================================= */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(0,0,0,0.01),
-        rgba(0,0,0,0.01) 1px,
-        transparent 1px,
-        transparent 2px
-    );
-    pointer-events: none;
-}    padding: 10px 0;
-    border-bottom: 1px solid #000;
-    border-top: 1px solid #000;
-    font-size: 0.9rem;
-    text-transform: uppercase;
+
+/* Tablet */
+@media (max-width: 1024px) {
+    main {
+        column-count: 2;
+    }
 }
 
-nav a {
-    text-decoration: none;
-    color: #111;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* ---------- Main Layout (NEWSPAPER COLUMNS) ---------- */
-main {
-    max-width: 1100px;
-    margin: 20px auto;
-    padding: 0 15px;
-
-    column-count: 3; /* KEY newspaper effect */
-    column-gap: 30px;
-}
-
-/* ---------- Articles ---------- */
-article {
-    break-inside: avoid;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #ccc;
-}
-
-article h2 {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-}
-
-article p {
-    font-size: 0.95rem;
-    text-align: justify;
-}
-
-/* ---------- Featured Article (Front Page Headline) ---------- */
-.featured-articles {
-    column-span: all; /* spans across all columns */
-    margin-bottom: 20px;
-    border-bottom: 2px solid #000;
-    padding-bottom: 15px;
-}
-
-.featured-articles h2 {
-    font-size: 2.2rem;
-    margin: 0;
-}
-
-.featured-articles p {
-    font-size: 1.1rem;
-}
-
-/* ---------- Drop Cap Effect (classic newspaper style) ---------- */
-article p::first-letter {
-    float: left;
-    font-size: 2.5rem;
-    line-height: 1;
-    padding-right: 6px;
-    font-weight: bold;
-}
-
-/* ---------- Footer ---------- */
-footer {
-    text-align: center;
-    font-size: 0.8rem;
-    padding: 20px;
-    border-top: 1px solid #000;
-    margin-top: 30px;
-}    justify-content: space-between;
-    margin: 30px 0;
-}
-
-.article {
-    flex: 1;
-    margin: 0 10px;
-    background-color: #fcfcf7;
-    border: 1px solid #ddd;
-    padding: 15px;
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-    font-family: "Georgia", "Times New Roman", serif;
-}
-
-.article h3 {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-}
-
-/* ---------- Multi-column content ---------- */
-.multi-column {
-    column-count: 3;
-    column-gap: 20px;
-    font-family: "Georgia", "Times New Roman", serif;
-    line-height: 1.6;
-    margin: 20px 0;
-}
-
-/* ---------- Submission Card ---------- */
-.submission-card {
-    border: 2px solid #333; /* darker border like a newspaper box */
-    padding: 15px;
-    margin: 20px 0;
-    background-color: #fdfcf7;
-    font-family: "Georgia", "Times New Roman", serif;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.submission-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
-}
-
-/* ---------- General Newspaper Styling ---------- */
-body {
-    background-color: #fcfcf7; /* off-white paper-like background */
-    color: #222;
-    font-family: "Georgia", "Times New Roman", serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
-
-h1, h2, h3 {
-    font-family: "Georgia", "Times New Roman", serif;
-    font-weight: normal;
-}
-
-p {
-    margin: 0 0 15px 0;
-}
-
-/* Optional: subtle “newsprint” texture for the page */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(0,0,0,0.01),
-        rgba(0,0,0,0.01) 1px,
-        transparent 1px,
-        transparent 2px
-    );
-    pointer-events: none;
-}  border: 1px solid #ddd;
-  padding: 10px;
-  margin: 20px 0;
-  background-color: #f9f9f9;
-}
-
-.main-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 30px;
-}
-
+/* Mobile */
 @media (max-width: 768px) {
-  .main-content {
-    grid-template-columns: 1fr;
-  }
-}
 
-h1 {
-  font-size: clamp(28px, 5vw, 56px);
-}
+    main {
+        column-count: 1;
+    }
 
-body {
-  font-size: clamp(16px, 2.5vw, 18px);
-}
-.nav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
+    .multi-column {
+        column-count: 1;
+    }
 
-@media (max-width: 768px) {
-  .nav {
-    flex-wrap: wrap;
-    gap: 10px;
-    font-size: 14px;
-  }
-}
+    .main-nav {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
 
-.container {
-  padding: 15px;
-}
+    .masthead h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
+    article h2 {
+        font-size: 1.2rem;
+    }
 
-a, button {
-  padding: 10px 12px;
-  display: inline-block;
+    article p {
+        font-size: 1rem;
+    }
 }
-
