@@ -282,7 +282,6 @@ A new worldly journal, written and maintained by every day people.
 <div class="section">
 <div class="section-title">The Peoples Story</div>
 <article>
-<h3 onclick="openPaper(storyDover)">Woman in Dover</h3>
 </article>
 </div>
 
@@ -342,7 +341,57 @@ function closePaper() {
   document.getElementById("paperOverlay").classList.remove("active");
 }
 
-const storyDover = `<h1>Woman in Dover</h1><p>Full story here...</p>`;
+/* ================= STORY DATABASE ================= */
+const stories = {
+  "Woman in Dover": `
+    <h1>Woman in Dover</h1>
+    <p>The woman in Dover...</p>
+  `,
+
+  "Tatsuma": `
+    <h1>Tatsuma</h1>
+    <p>Story coming soon.</p>
+  `,
+
+  "PP Team Review": `
+    <h1>Food Worth the Travel</h1>
+    <p>Review coming soon.</p>
+  `,
+
+  "The Will to Live, a Holocaust Survivors Experience": `
+    <h1>The Will to Live</h1>
+    <p>Story coming soon.</p>
+  `,
+
+  "Find Me At The Rail": `
+    <h1>Find Me At The Rail</h1>
+    <p>Music feature coming soon.</p>
+  `,
+
+  "Delilah": `<h1>Delilah</h1><p>Coming soon.</p>`,
+  "Thadious Stevens": `<h1>Thadious Stevens</h1><p>Coming soon.</p>`,
+  "Learning the Party": `<h1>Learning the Party</h1><p>Coming soon.</p>`,
+  "Weed Poll Results": `<h1>Weed Poll Results</h1><p>Coming soon.</p>`,
+  "LOVERMiND": `<h1>LOVERMiND</h1><p>Coming soon.</p>`,
+  "PP Exclusive": `<h1>Homeless 10</h1><p>Coming soon.</p>`,
+  "Because It’s a Lion": `<h1>Small Business</h1><p>Coming soon.</p>`,
+  "Andy Charles Anderson": `<h1>Ghost</h1><p>Coming soon.</p>`,
+  "Discussion piece": `<h1>NSFW</h1><p>Coming soon.</p>`,
+  "Cameron": `<h1>Sports</h1><p>Coming soon.</p>`
+};
+
+/* ================= AUTO LINK ALL HEADLINES ================= */
+document.querySelectorAll("article h3").forEach(h3 => {
+  h3.addEventListener("click", () => {
+    const title = h3.innerText.trim();
+
+    if (stories[title]) {
+      openPaper(stories[title]);
+    } else {
+      openPaper(`<h1>${title}</h1><p>This story is not yet available.</p>`);
+    }
+  });
+});
 </script>
 
 </body>
