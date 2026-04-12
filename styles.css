@@ -207,7 +207,7 @@ footer {
 }
 
 /* =========================================================
-   ===== 📱 RESPONSIVE DESIGN =====
+   ===== 📱 RESPONSIVE DESIGN FIX (IMPORTANT) =====
    ========================================================= */
 
 /* Tablet */
@@ -220,6 +220,7 @@ footer {
 /* Mobile */
 @media (max-width: 768px) {
 
+    /* NAV FIX (you already did this well) */
     .main-nav {
         display: flex;
         flex-direction: column;
@@ -229,7 +230,7 @@ footer {
     }
 
     .main-nav a {
-        display: block;              /* 👈 THIS is the key fix */
+        display: block;
         width: 100%;
         text-align: center;
         padding: 10px 0;
@@ -237,10 +238,32 @@ footer {
         border-bottom: 1px solid #ccc;
     }
 
-    /* Remove divider pipes completely */
     .main-nav a::after,
     .main-nav a:not(:last-child)::after {
         content: none;
     }
 
+    /* ⭐ CRITICAL FIX: STOP MULTI-COLUMN ON MOBILE */
+    main {
+        column-count: 1 !important;
+        column-gap: 0;
+    }
+
+    article,
+    .article,
+    .featured-articles,
+    .multi-column {
+        break-inside: auto;
+    }
+
+    /* Improve readability */
+    article p {
+        text-align: left;
+    }
+
+    article p::first-letter {
+        float: none;
+        font-size: inherit;
+        padding: 0;
+    }
 }
