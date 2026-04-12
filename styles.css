@@ -246,3 +246,27 @@ footer {
         font-size: 1rem;
     }
 }
+/* =========================================================
+   ===== MOBILE NAV FIX (ADD ONLY - DO NOT REMOVE OTHERS)
+   ========================================================= */
+@media (max-width: 768px) {
+
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .main-nav a {
+    font-size: 0.9rem;
+    padding: 6px 0;
+  }
+
+  /* Remove divider lines on mobile */
+  .main-nav a::after,
+  .main-nav a:not(:last-child)::after {
+    content: "";
+    margin: 0;
+  }
+
+}
