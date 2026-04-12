@@ -9,6 +9,13 @@ body {
     line-height: 1.6;
 }
 
+article p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #333;
+    margin-top: 4px;
+}
+
 /* =========================================================
    ===== MASTHEAD (SITE TITLE AREA) =====
    ========================================================= */
