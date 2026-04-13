@@ -25,12 +25,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Media safety */
-img, video, iframe {
-    max-width: 100%;
-    height: auto;
-}
-
 /* =========================================================
    HEADER
    ========================================================= */
@@ -65,12 +59,12 @@ h1.masthead {
 }
 
 /* =========================================================
-   NAV (MOBILE FIX)
+   NAV
    ========================================================= */
 .main-nav {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;   /* FIX */
+    flex-wrap: wrap;
     gap: 10px;
     padding: 6px 10px;
     border-top: 1px solid black;
@@ -87,11 +81,6 @@ h1.masthead {
     text-transform: uppercase;
     padding: 4px 6px;
     white-space: nowrap;
-}
-
-/* Remove separators (prevents mobile overflow) */
-.main-nav a::after {
-    content: "";
 }
 
 .main-nav a:hover {
@@ -112,14 +101,13 @@ main {
     text-align: center;
 }
 
-/* Typography */
-.maintenance-title {
+.title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(1.8rem, 5vw, 2.5rem);
     margin-bottom: 20px;
 }
 
-.maintenance-text {
+.text {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 15px;
@@ -132,15 +120,67 @@ main {
     color: #444;
 }
 
-/* MOBILE SPACING */
-@media (max-width: 600px) {
-    main {
-        padding: 50px 15px;
-    }
-
-    .maintenance-text {
-        font-size: 1rem;
-    }
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+    margin-top: 30px;
+    border-top: 2px solid black;
+    text-align: center;
+    padding: 15px;
+    background: white;
+    font-size: 0.8rem;
 }
 
-/*
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="top-bar">
+    <span>April 20, 2026</span>
+    <span>Vol. 1 No. 1</span>
+</div>
+
+<h1 class="masthead">THE PEOPLE'S PAPER</h1>
+
+<div class="tagline">
+    A People's Store
+</div>
+
+<nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="store.html" class="active">Store</a>
+    <a href="members.html">Members</a>
+    <a href="submission.html">Submit</a>
+    <a href="gallery.html">Art Gallery</a>
+</nav>
+
+</header>
+
+<main>
+
+<div class="title">Store Under Maintenance</div>
+
+<p class="text">
+    Our store is currently being updated and improved to better serve our readers and supporters.
+</p>
+
+<p class="text">
+    We appreciate your patience and encourage you to check back soon for new offers, merchandise, and ways to donate.
+</p>
+
+<p class="notice">
+    For urgent inquiries or support, please contact: peoplespaperbenefit@gmail.com
+</p>
+
+</main>
+
+<footer>
+    © 2026 The People's Paper | All rights reserved
+</footer>
+
+</body>
+</html>
