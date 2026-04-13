@@ -11,17 +11,28 @@
 <style>
 
 /* =========================================================
-   ===== GENERAL =====
+   GLOBAL FIX
    ========================================================= */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Libre Baskerville', serif;
     background: #f8f6f1;
     color: #111;
+    overflow-x: hidden;
+}
+
+/* Images safe */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
 }
 
 /* =========================================================
-   ===== HEADER =====
+   HEADER
    ========================================================= */
 header {
     background: white;
@@ -34,6 +45,8 @@ header {
     font-size: 0.8rem;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
     border-bottom: 1px solid #aaa;
     padding: 5px 10px;
 }
@@ -41,7 +54,7 @@ header {
 h1.masthead {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 3.5rem; /* MATCHES SITE */
+    font-size: clamp(2rem, 6vw, 3.5rem);
     margin: 10px 0;
     letter-spacing: 2px;
 }
@@ -52,18 +65,17 @@ h1.masthead {
 }
 
 /* =========================================================
-   ===== NAV (MATCHES SITE) =====
+   NAV (MOBILE FIX)
    ========================================================= */
 .main-nav {
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap;
-    gap: 14px;
+    flex-wrap: wrap;   /* IMPORTANT FIX */
+    gap: 10px;
     padding: 6px 10px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     background: #fdfcf7;
-    white-space: nowrap;
 }
 
 .main-nav a {
@@ -73,13 +85,13 @@ h1.masthead {
     font-size: 0.78rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 0 6px;
+    padding: 4px 6px;
+    white-space: nowrap;
 }
 
-.main-nav a:not(:last-child)::after {
-    content: "|";
-    margin-left: 10px;
-    color: #777;
+/* remove separator (prevents overflow issues) */
+.main-nav a::after {
+    content: "";
 }
 
 .main-nav a:hover {
@@ -91,7 +103,7 @@ h1.masthead {
 }
 
 /* =========================================================
-   ===== MAIN =====
+   MAIN
    ========================================================= */
 main {
     max-width: 1100px;
@@ -99,7 +111,6 @@ main {
     padding: 20px;
 }
 
-/* Title styled like section headers */
 .page-title {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
@@ -111,10 +122,11 @@ main {
 .gallery-intro {
     margin-bottom: 20px;
     font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 /* =========================================================
-   ===== GALLERY GRID =====
+   GALLERY GRID
    ========================================================= */
 .gallery-grid {
     display: grid;
@@ -151,7 +163,24 @@ main {
 }
 
 /* =========================================================
-   ===== FOOTER =====
+   MOBILE GRID FIX
+   ========================================================= */
+@media (max-width: 600px) {
+    main {
+        padding: 15px 12px;
+    }
+
+    .page-title {
+        font-size: 1.6rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   FOOTER
    ========================================================= */
 footer {
     margin-top: 30px;
