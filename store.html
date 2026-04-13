@@ -1,20 +1,38 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Store | The People's Paper</title><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville&display=swap" rel="stylesheet"><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Store | The People's Paper</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+<style>
 
 /* =========================================================
-   ===== GENERAL STYLING =====
+   GLOBAL FIX
    ========================================================= */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Libre Baskerville', serif;
     background: #f8f6f1;
     color: #111;
+    overflow-x: hidden;
+}
+
+/* Media safety */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
 }
 
 /* =========================================================
-   ===== HEADER =====
+   HEADER
    ========================================================= */
 header {
     background: white;
@@ -27,6 +45,8 @@ header {
     font-size: 0.8rem;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
     border-bottom: 1px solid #aaa;
     padding: 5px 10px;
 }
@@ -34,7 +54,7 @@ header {
 h1.masthead {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 6vw, 3.5rem);
     margin: 10px 0;
     letter-spacing: 2px;
 }
@@ -45,18 +65,17 @@ h1.masthead {
 }
 
 /* =========================================================
-   ===== NAVIGATION =====
+   NAV (MOBILE FIX)
    ========================================================= */
 .main-nav {
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap;
-    gap: 14px;
+    flex-wrap: wrap;   /* FIX */
+    gap: 10px;
     padding: 6px 10px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     background: #fdfcf7;
-    white-space: nowrap;
 }
 
 .main-nav a {
@@ -66,13 +85,13 @@ h1.masthead {
     font-size: 0.78rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 0 6px;
+    padding: 4px 6px;
+    white-space: nowrap;
 }
 
-.main-nav a:not(:last-child)::after {
-    content: "|";
-    margin-left: 10px;
-    color: #777;
+/* Remove separators (prevents mobile overflow) */
+.main-nav a::after {
+    content: "";
 }
 
 .main-nav a:hover {
@@ -84,7 +103,7 @@ h1.masthead {
 }
 
 /* =========================================================
-   ===== MAINTENANCE MESSAGE =====
+   MAIN CONTENT
    ========================================================= */
 main {
     max-width: 800px;
@@ -93,9 +112,10 @@ main {
     text-align: center;
 }
 
+/* Typography */
 .maintenance-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     margin-bottom: 20px;
 }
 
@@ -112,52 +132,15 @@ main {
     color: #444;
 }
 
-/* =========================================================
-   ===== FOOTER =====
-   ========================================================= */
-footer {
-    margin-top: 30px;
-    border-top: 2px solid black;
-    text-align: center;
-    padding: 15px;
-    background: white;
-    font-size: 0.8rem;
+/* MOBILE SPACING */
+@media (max-width: 600px) {
+    main {
+        padding: 50px 15px;
+    }
+
+    .maintenance-text {
+        font-size: 1rem;
+    }
 }
 
-</style></head><body><header><div class="top-bar">
-    <span>April 20, 2026</span>
-    <span>Vol. 1 No. 1</span>
-</div>
-
-<h1 class="masthead">THE PEOPLE'S PAPER</h1>
-
-<div class="tagline">
-    A People's Store
-</div>
-
-<nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="store.html" class="active">Store</a>
-    <a href="members.html">Members</a>
-    <a href="submission.html">Submit</a>
-    <a href="gallery.html">Art Gallery</a>
-</nav>
-
-</header><main><div class="maintenance-title">Store Under Maintenance</div>
-
-<p class="maintenance-text">
-    Our store is currently being updated and improved to better serve our readers and supporters.
-</p>
-
-<p class="maintenance-text">
-    We appreciate your patience and encourage you to check back soon for new offers, merchandise, and ways to donate.
-</p>
-
-<p class="notice">
-    For urgent inquiries or support, please contact us at peoplespaperbenefit@gmail.com
-</p>
-
-</main><footer>
-    © 2026 The People's Paper | All rights reserved
-</footer></body>
-</html>
+/*
