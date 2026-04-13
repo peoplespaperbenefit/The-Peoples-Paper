@@ -11,17 +11,27 @@
 <style>
 
 /* =========================================================
-   ===== GENERAL PAGE STYLING =====
+   GLOBAL RESET (MOBILE FIX)
    ========================================================= */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Libre Baskerville', serif;
     background: #f8f6f1;
     color: #111;
+    overflow-x: hidden;
+}
+
+/* Images safe */
+img, video, iframe {
+    max-width: 100%;
 }
 
 /* =========================================================
-   ===== HEADER =====
+   HEADER
    ========================================================= */
 header {
     background: white;
@@ -35,6 +45,8 @@ header {
     font-size: 0.8rem;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
     border-bottom: 1px solid #aaa;
     padding: 5px 10px;
 }
@@ -43,7 +55,7 @@ header {
 h1.masthead {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 6vw, 3.5rem);
     margin: 10px 0;
     letter-spacing: 2px;
 }
@@ -55,18 +67,17 @@ h1.masthead {
 }
 
 /* =========================================================
-   ===== NAVIGATION (MATCHES HOMEPAGE EXACTLY) =====
+   NAVIGATION (FIXED FOR MOBILE)
    ========================================================= */
 .main-nav {
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap;
-    gap: 14px;
+    flex-wrap: wrap;   /* IMPORTANT FIX */
+    gap: 10px;
     padding: 6px 10px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     background: #fdfcf7;
-    white-space: nowrap;
 }
 
 /* Links */
@@ -77,14 +88,13 @@ h1.masthead {
     font-size: 0.78rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 0 6px;
+    padding: 4px 6px;
+    white-space: nowrap;
 }
 
-/* Divider */
-.main-nav a:not(:last-child)::after {
-    content: "|";
-    margin-left: 10px;
-    color: #777;
+/* Remove divider (caused overflow on small screens) */
+.main-nav a::after {
+    content: "";
 }
 
 /* Hover */
@@ -98,7 +108,7 @@ h1.masthead {
 }
 
 /* =========================================================
-   ===== MAIN CONTENT =====
+   MAIN CONTENT
    ========================================================= */
 main {
     max-width: 900px;
@@ -123,6 +133,7 @@ main {
 
 .member h3 {
     margin: 5px 0;
+    font-size: 1.1rem;
 }
 
 .role {
@@ -132,10 +143,26 @@ main {
 
 .bio {
     font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* MOBILE spacing improvement */
+@media (max-width: 600px) {
+    main {
+        padding: 20px 12px;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .member h3 {
+        font-size: 1rem;
+    }
 }
 
 /* =========================================================
-   ===== FOOTER =====
+   FOOTER
    ========================================================= */
 footer {
     margin-top: 30px;
