@@ -1,275 +1,179 @@
+/* =========================================================
+   GLOBAL RESET + MOBILE SAFETY
+   ========================================================= */
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-}
-
-/* =========================================================
-   ===== GLOBAL NEWSPAPER STYLE =====
-   ========================================================= */
-body {
     margin: 0;
-    font-family: "Georgia", "Times New Roman", serif;
-    background-color: #f4f1ea;
-    color: #111;
-    line-height: 1.6;
-    font-size: clamp(16px, 2.5vw, 18px);
+    padding: 0;
 }
 
-/* Optional newsprint texture */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(0,0,0,0.01),
-        rgba(0,0,0,0.01) 1px,
-        transparent 1px,
-        transparent 2px
-    );
-    pointer-events: none;
-}
-
-/* =========================================================
-   ===== MASTHEAD =====
-   ========================================================= */
-.masthead {
-    text-align: center;
-    padding: 25px 10px 10px;
-    border-bottom: 3px double #000;
-}
-
-.masthead h1 {
-    font-size: clamp(28px, 5vw, 56px);
-    margin: 0;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-.masthead p {
-    font-size: 0.9rem;
-    margin: 5px 0 0;
-    letter-spacing: 1px;
-}
-
-/* =========================================================
-   ===== NAVIGATION =====
-   ========================================================= */
-.main-nav {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    padding: 6px 10px;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    background: #fdfcf7;
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: #111;
-    font-weight: bold;
-    font-size: 0.78rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.main-nav a:not(:last-child)::after {
-    content: "|";
-    margin-left: 10px;
-    color: #777;
-}
-
-.main-nav a:hover,
-.main-nav a.active {
-    text-decoration: underline;
-}
-
-/* =========================================================
-   ===== MAIN LAYOUT (NEWSPAPER COLUMNS) =====
-   ========================================================= */
-main {
-    max-width: 1100px;
-    margin: 20px auto;
-    padding: 0 15px;
-
-    column-count: 3;
-    column-gap: 30px;
-}
-
-/* =========================================================
-   ===== FEATURED ARTICLE =====
-   ========================================================= */
-.featured-articles {
-    column-span: all;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #000;
-    padding-bottom: 15px;
-}
-
-.featured-articles h2 {
-    font-size: 2.2rem;
-    margin: 0;
-}
-
-.featured-articles p {
-    font-size: 1.1rem;
-}
-
-/* =========================================================
-   ===== ARTICLES =====
-   ========================================================= */
-article {
-    break-inside: avoid;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #ccc;
-}
-
-article h2 {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-}
-
-article p {
-    font-size: 0.95rem;
-    text-align: justify;
-}
-
-/* Drop cap */
-article p::first-letter {
-    float: left;
-    font-size: 2.5rem;
-    line-height: 1;
-    padding-right: 6px;
-    font-weight: bold;
-}
-
-/* =========================================================
-   ===== ARTICLE CARDS =====
-   ========================================================= */
-.article {
-    background-color: #fcfcf7;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 20px;
-}
-
-.article h3 {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-}
-
-/* =========================================================
-   ===== MULTI-COLUMN SECTION =====
-   ========================================================= */
-.multi-column {
-    column-count: 3;
-    column-gap: 20px;
-    margin: 20px 0;
-}
-
-/* =========================================================
-   ===== SUBMISSION CARD =====
-   ========================================================= */
-.submission-card {
-    border: 2px solid #333;
-    padding: 15px;
-    margin: 20px 0;
-    background-color: #fdfcf7;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    transition: 0.2s;
-}
-
-.submission-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
-}
-
-/* =========================================================
-   ===== IMAGES & GENERAL =====
-   ========================================================= */
-img {
+/* Prevent horizontal scroll from any element */
+img, video, iframe {
     max-width: 100%;
     height: auto;
 }
 
-a, button {
-    padding: 10px 12px;
-    display: inline-block;
+/* =========================================================
+   GLOBAL NEWSPAPER STYLE
+   ========================================================= */
+body {
+    font-family: "Georgia", "Times New Roman", serif;
+    background-color: #f4f1ea;
+    color: #111;
+    line-height: 1.6;
+    font-size: clamp(16px, 1.2vw, 18px);
 }
 
 /* =========================================================
-   ===== FOOTER =====
+   HEADER / MASTHEAD
+   ========================================================= */
+header {
+    text-align: center;
+    padding: 20px 10px 10px;
+}
+
+.masthead {
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    font-size: clamp(32px, 6vw, 60px);
+    letter-spacing: 1px;
+}
+
+.signature {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* Top bar (date / volume etc.) */
+.top-bar {
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   NAVIGATION BAR
+   ========================================================= */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* KEY FIX for mobile */
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 2px solid #000;
+}
+
+nav a {
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   MAIN LAYOUT / GRID
+   ========================================================= */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* RESPONSIVE GRID FIX */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   ARTICLE STYLING
+   ========================================================= */
+article {
+    background: transparent;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+article h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+article p {
+    margin: 0;
+}
+
+/* =========================================================
+   IMAGES
+   ========================================================= */
+.article-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   FOOTER
    ========================================================= */
 footer {
     text-align: center;
-    font-size: 0.8rem;
     padding: 20px;
-    border-top: 1px solid #000;
+    font-size: 14px;
+    border-top: 1px solid #ccc;
     margin-top: 30px;
 }
 
 /* =========================================================
-   ===== 📱 RESPONSIVE DESIGN FIX (IMPORTANT) =====
+   EXTRA MOBILE TUNING
    ========================================================= */
+@media (max-width: 600px) {
 
-/* Tablet */
-@media (max-width: 1024px) {
-    main {
-        column-count: 2;
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-
-    /* NAV FIX (you already did this well) */
-    .main-nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        gap: 0;
+    nav {
+        gap: 5px;
     }
 
-    .main-nav a {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-        font-size: 0.95rem;
-        border-bottom: 1px solid #ccc;
+    nav a {
+        font-size: 12px;
+        padding: 4px 6px;
     }
 
-    .main-nav a::after,
-    .main-nav a:not(:last-child)::after {
-        content: none;
+    .masthead {
+        font-size: 34px;
     }
 
-    /* ⭐ CRITICAL FIX: STOP MULTI-COLUMN ON MOBILE */
-    main {
-        column-count: 1 !important;
-        column-gap: 0;
-    }
-
-    article,
-    .article,
-    .featured-articles,
-    .multi-column {
-        break-inside: auto;
-    }
-
-    /* Improve readability */
-    article p {
-        text-align: left;
-    }
-
-    article p::first-letter {
-        float: none;
-        font-size: inherit;
-        padding: 0;
+    article h2 {
+        font-size: 18px;
     }
 }
