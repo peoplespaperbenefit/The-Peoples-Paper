@@ -1024,7 +1024,7 @@ I did.<br>
 
 <p>But cheers to 30! “</p>
 
-<p class="signature">~ Monee</p>`
+<p class="signature">~ Monee</p>`,
 
    
    "FIFA World Cup": 
@@ -1047,7 +1047,16 @@ document.querySelectorAll("article h3").forEach(h3 => {
     openPaper(stories[title] || `<h1>${title}</h1><p>Coming soon.</p>`);
   });
 });
-</script>
 
+
+document.querySelectorAll("article").forEach(article => {
+  article.addEventListener("click", () => {
+    const h3 = article.querySelector("h3");
+    const key = h3.getAttribute("data-story");
+    openPaper(stories[key] || `<h1>${key}</h1><p>Coming soon.</p>`);
+  });
+});   
+
+   </script>
 </body>
 </html>
