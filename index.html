@@ -1049,8 +1049,8 @@ I did.<br>
 /* CLICK HANDLER */
 document.querySelectorAll("article h3").forEach(h3 => {
   h3.addEventListener("click", () => {
-    const title = h3.innerText.trim();
-    openPaper(stories[title] || `<h1>${title}</h1><p>Coming soon.</p>`);
+    const key = h3.getAttribute("data-story");
+    openPaper(stories[key] || `<h1>Coming soon</h1>`);
   });
 });
 
