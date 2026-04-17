@@ -65,14 +65,14 @@ h1.masthead {
     margin-bottom: 10px;
 }
 
-/* =========================================================
-   NAV
+ /*=========================================================
+   NAV (MOBILE FIX)
    ========================================================= */
 .main-nav {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
+    flex-wrap: wrap;   /* IMPORTANT FIX */
+    gap: 10px;
     padding: 6px 10px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
@@ -88,6 +88,19 @@ h1.masthead {
     text-transform: uppercase;
     padding: 4px 6px;
     white-space: nowrap;
+}
+
+/* remove separator (prevents overflow issues) */
+.main-nav a::after {
+    content: "";
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+.main-nav a.active {
+    text-decoration: underline;
 }
 
 /* =========================================================
