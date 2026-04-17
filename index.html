@@ -963,7 +963,7 @@ I did.<br>
 (To be continued at an Indian restaurant near you in one week...)</p>`,
 
 "Cheers to 30":
-   `<h1>Cheers to 30<h1>
+   `<h1>Cheers to 30</h1>
 <p>"The 29th year is one I won’t forget, </p>
 
 <p>It’s the year of becoming and shedding,</p>
@@ -1054,14 +1054,6 @@ document.querySelectorAll("article h3").forEach(h3 => {
   });
 });
 
-
-document.querySelectorAll("article").forEach(article => {
-  article.addEventListener("click", () => {
-    const h3 = article.querySelector("h3");
-    const key = h3.getAttribute("data-story");
-    openPaper(stories[key] || `<h1>${key}</h1><p>Coming soon.</p>`);
-  });
-});   
 
    </script>
 </body>
