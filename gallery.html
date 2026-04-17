@@ -25,7 +25,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Images safe */
 img, video, iframe {
     max-width: 100%;
     height: auto;
@@ -65,12 +64,12 @@ h1.masthead {
 }
 
 /* =========================================================
-   NAV (MOBILE FIX)
+   NAV
    ========================================================= */
 .main-nav {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;   /* IMPORTANT FIX */
+    flex-wrap: wrap;
     gap: 10px;
     padding: 6px 10px;
     border-top: 1px solid black;
@@ -89,7 +88,6 @@ h1.masthead {
     white-space: nowrap;
 }
 
-/* remove separator (prevents overflow issues) */
 .main-nav a::after {
     content: "";
 }
@@ -122,11 +120,10 @@ main {
 .gallery-intro {
     margin-bottom: 20px;
     font-size: 0.95rem;
-    line-height: 1.5;
 }
 
 /* =========================================================
-   GALLERY GRID
+   GALLERY
    ========================================================= */
 .gallery-grid {
     display: grid;
@@ -138,14 +135,16 @@ main {
     background: white;
     border: 1px solid #ccc;
     padding: 10px;
-    transition: transform 0.15s ease;
+    cursor: pointer;
 }
 
 .gallery-item:hover {
     transform: scale(1.02);
 }
 
-.gallery-item img {
+.gallery-item img,
+.gallery-item video,
+.gallery-item iframe {
     width: 100%;
     display: block;
     border-bottom: 1px solid #ccc;
@@ -163,17 +162,42 @@ main {
 }
 
 /* =========================================================
-   MOBILE GRID FIX
+   LIGHTBOX
+   ========================================================= */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox img,
+.lightbox video,
+.lightbox iframe {
+    width: 100%;
+    max-height: 90vh;
+}
+
+/* =========================================================
+   MOBILE
    ========================================================= */
 @media (max-width: 600px) {
-    main {
-        padding: 15px 12px;
-    }
-
-    .page-title {
-        font-size: 1.6rem;
-    }
-
     .gallery-grid {
         grid-template-columns: 1fr;
     }
@@ -221,41 +245,64 @@ footer {
     <div class="page-title">Art Gallery</div>
 
     <div class="gallery-intro">
-        A curated collection of artwork submitted by the public. Photography, illustration, painting, and more.
+        A curated collection of artwork submitted by the public.
     </div>
 
     <div class="gallery-grid">
 
         <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300">
-            <h3>Untitled Piece</h3>
-            <p>By Artist Name</p>
+            <img src="images/art1.jpg">
+            <h3>Artwork</h3>
+            <p>By Artist</p>
         </div>
 
         <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300">
-            <h3>City Reflections</h3>
-            <p>By Artist Name</p>
+            <video>
+                <source src="videos/clip1.mp4" type="video/mp4">
+            </video>
+            <h3>Short Film</h3>
+            <p>By Artist</p>
         </div>
 
         <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300">
-            <h3>Abstract Form</h3>
-            <p>By Artist Name</p>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300">
-            <h3>Still Life Study</h3>
-            <p>By Artist Name</p>
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
+            <h3>Video Project</h3>
+            <p>By Artist</p>
         </div>
 
     </div>
 </main>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox"></div>
+
 <footer>
-    © 2026 The People's Paper | All rights reserved
+    © 2026 The People's Paper
 </footer>
+
+<script>
+const lightbox = document.getElementById("lightbox");
+
+document.querySelectorAll(".gallery-item").forEach(item => {
+    item.addEventListener("click", () => {
+        let content = item.querySelector("img, video, iframe").cloneNode(true);
+
+        if(content.tagName === "VIDEO") {
+            content.setAttribute("controls", true);
+            content.setAttribute("autoplay", true);
+        }
+
+        lightbox.innerHTML = "";
+        lightbox.appendChild(content);
+        lightbox.classList.add("active");
+    });
+});
+
+lightbox.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+    lightbox.innerHTML = "";
+});
+</script>
 
 </body>
 </html>
