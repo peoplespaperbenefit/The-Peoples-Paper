@@ -155,9 +155,22 @@ article .preview {
     height: 700px;
     overflow-y: scroll;
     overflow-x: hidden;
-    position: relative;
     border: 2px solid #111;
     background: #ddd;
+}
+
+/* giant internal image area */
+.poll-strip {
+    height: 5000px; /* adjust until full image fits */
+    
+    background-image: url("images/420poll.jpg");
+    background-repeat: no-repeat;
+
+    /* MASSIVE zoom */
+    background-size: 400% auto;
+
+    /* center slice of image */
+    background-position: center top;
 }
 
 /* zoom image massively */
