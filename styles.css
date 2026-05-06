@@ -163,7 +163,7 @@ article .preview {
 .poll-strip {
     height: 5000px; /* adjust until full image fits */
     
-    background-image: url("images/420poll.jpg");
+    background-image: url("420poll.jpg");
     background-repeat: no-repeat;
 
     /* MASSIVE zoom */
