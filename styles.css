@@ -159,38 +159,10 @@ article .preview {
     background: #ddd;
 }
 
-/* giant internal image area */
-.poll-strip {
-    height: 5000px; /* adjust until full image fits */
-    
-    background-image: url("images/420poll.jpg");
-    background-repeat: no-repeat;
-
-    /* MASSIVE zoom */
-    background-size: 400% auto;
-
-    /* center slice of image */
-    background-position: center top;
-}
-
-/* zoom image massively */
-.scroll-image {
-    width: 400%;
-    max-width: none;
-    display: block;
-
-    /* shift image left so center section shows */
-    transform: translateX(-37.5%);
-}
-
-.scroll-window {
+.poll-window img {
     width: 100%;
-    height: 700px;          /* visible window height */
-    overflow-y: scroll;     /* vertical scrolling */
-    overflow-x: hidden;     /* hide side overflow */
-    border: 2px solid #111;
-    background: #ddd;
-    position: relative;
+    height: auto;
+    display: block;
 }
 
 /* =========================================================
