@@ -151,10 +151,10 @@ article .preview {
 
 .chart-window {
     width: 100%;
-    height: 600px;        /* IMPORTANT: fixed height, not max-height */
-    overflow-y: scroll;
+    height: 600px;        /* THIS is what creates the window */
+    overflow-y: auto;     /* scroll INSIDE the box */
+    overflow-x: hidden;
     border: 2px solid #111;
-    position: relative;
 }
 
 .chart-window img {
