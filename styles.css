@@ -151,16 +151,15 @@ article .preview {
 
 .chart-window {
     width: 100%;
-    max-height: 600px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border: 1px solid #111;
-    background: #fff;
+    height: 600px;        /* IMPORTANT: fixed height, not max-height */
+    overflow-y: scroll;
+    border: 2px solid #111;
+    position: relative;
 }
 
 .chart-window img {
-    width: 100%;        /* fits article width */
-    height: auto;       /* keeps proportions */
+    width: 100%;
+    height: auto;
     display: block;
 }
 
