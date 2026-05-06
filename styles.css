@@ -1,4 +1,4 @@
-/* =========================================================
+900px/* =========================================================
    GLOBAL RESET + MOBILE SAFETY
    ========================================================= */
 * {
@@ -150,17 +150,18 @@ article .preview {
     margin-bottom: 10px;
 }
 
-.poll-scroll {
+.poll-window {
     width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    border: 1px solid #ccc;
+    max-height: 600px;   /* height of the viewing window */
+    overflow-y: scroll;  /* vertical scrolling */
+    overflow-x: hidden;
+    border: 1px solid #999;
     margin-top: 12px;
+    background: white;
 }
 
-.poll-scroll img {
+.poll-window img {
     width: 100%;
-    min-width: 700px; /* keeps detail readable */
     display: block;
 }
 
