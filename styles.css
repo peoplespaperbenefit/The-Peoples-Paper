@@ -168,6 +168,23 @@ article .preview {
     display: block;
 }
 
+.scroll-window {
+    width: 100%;
+    height: 700px;          /* visible window height */
+    overflow-y: scroll;     /* vertical scrolling */
+    overflow-x: hidden;     /* hide side overflow */
+    border: 2px solid #111;
+    background: #ddd;
+    position: relative;
+}
+
+/* Show only middle portion of image */
+.scroll-image {
+    width: 250%;            /* make image wider */
+    max-width: none;
+    display: block;
+    margin-left: -75%;      /* centers middle 25% */
+}
 /* =========================================================
    FOOTER
    ========================================================= */
