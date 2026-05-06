@@ -150,6 +150,20 @@ article .preview {
     margin-bottom: 10px;
 }
 
+.poll-scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 1px solid #ccc;
+    margin-top: 12px;
+}
+
+.poll-scroll img {
+    width: 100%;
+    min-width: 700px; /* keeps detail readable */
+    display: block;
+}
+
 /* =========================================================
    FOOTER
    ========================================================= */
