@@ -161,21 +161,17 @@ article .preview {
 /* Scrollable image window */
 .poll-window {
     width: 100%;
-    max-width: 1000px;
     height: 300px;
-
-    overflow: auto;
-
+    overflow: scroll;
     border: 2px solid #111;
-    background: #fff;
-
-    margin: 20px auto;
 }
 
+/* FORCE image to ignore responsive scaling */
 .poll-window img {
-    maxwidth:none;
-    width: 1000%;
-    height: auto;
+    width: 2500px !important;
+    max-width: unset !important;
+    min-width: 2500px !important;
+    height: auto !important;
     display: block;
 }
 /* =========================================================
