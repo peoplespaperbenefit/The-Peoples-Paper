@@ -163,14 +163,22 @@ article .preview {
     width: 100%;
     max-width: 900px;
     height: 320px;
-    overflow: auto;
+
+    overflow: hidden;   /* key change */
+
     border: 2px solid #111;
+    background: #fff;
+
     margin: 20px auto;
+
+    position: relative;
 }
 
 .poll-window img {
-    min-width: 120%;
+    width: 180%;        /* zoom IN */
     height: auto;
+
+    transform: translateX(-15%); /* shifts crop */
     display: block;
 }
 /* =========================================================
