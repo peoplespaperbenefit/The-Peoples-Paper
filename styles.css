@@ -150,15 +150,19 @@ article .preview {
 }
 
 .chart-window {
-    height: 80vh;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 800px;   /* keeps it in article width */
+    height: 600px;      /* this is your “window” */
+    overflow-y: auto;   /* scroll INSIDE image */
+    overflow-x: hidden;
     border: 2px solid #111;
-    background: white;
+    margin: 0 auto;
+    background: #fff;
 }
 
 .chart-window img {
     width: 100%;
+    height: auto;
     display: block;
 }
 
