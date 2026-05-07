@@ -151,19 +151,28 @@ article .preview {
 
 .chart-window {
     width: 100%;
-    max-width: 800px;   /* keeps it in article width */
-    height: 600px;      /* this is your “window” */
-    overflow-y: auto;   /* scroll INSIDE image */
-    overflow-x: hidden;
+    max-width: 800px;
+    height: 80vh;
+    overflow: hidden;        /* IMPORTANT: no scrollbars */
     border: 2px solid #111;
+    background: white;
+    position: relative;
     margin: 0 auto;
-    background: #fff;
+    cursor: grab;
+}
+
+.chart-window:active {
+    cursor: grabbing;
 }
 
 .chart-window img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
 }
 
 .article-img {
