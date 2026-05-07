@@ -29,6 +29,10 @@ body {
     color: #111;
     line-height: 1.6;
     font-size: clamp(16px, 1.2vw, 18px);
+ 
+   /*Test*/
+    outline: 5px solid red;
+   
 }
 
 
