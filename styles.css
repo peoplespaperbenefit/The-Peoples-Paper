@@ -161,10 +161,10 @@ article .preview {
 /* Scrollable image window */
 .poll-window {
     width: 100%;
-    max-width: 900px;
-    height: 320px;
+    max-width: 1000px;
+    height: 500px;
 
-    overflow: auto;   /* IMPORTANT: restores scrolling */
+    overflow: auto;
 
     border: 2px solid #111;
     background: #fff;
@@ -173,7 +173,7 @@ article .preview {
 }
 
 .poll-window img {
-    width: 300%;      /* moderate zoom */
+    width: 250%;
     height: auto;
     display: block;
 }
