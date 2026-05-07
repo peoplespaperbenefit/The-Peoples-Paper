@@ -173,7 +173,8 @@ article .preview {
 }
 
 .poll-window img {
-    width: 6000%;
+    maxwidth:none;
+    width: 1000%;
     height: auto;
     display: block;
 }
