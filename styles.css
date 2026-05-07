@@ -160,25 +160,19 @@ article .preview {
 
 /* Scrollable image window */
 .poll-window {
-    max-width: 900px;
-.poll-window {
     width: 100%;
     max-width: 900px;
-    height: 320px;          /* smaller window */
-
+    height: 320px;
     overflow: auto;
     border: 2px solid #111;
-    background: #fff;
-
     margin: 20px auto;
 }
 
 .poll-window img {
-    width: 100%;            /* fill width */
+    min-width: 120%;
     height: auto;
     display: block;
 }
-
 /* =========================================================
    FOOTER
    ========================================================= */
