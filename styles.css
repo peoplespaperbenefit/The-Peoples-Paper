@@ -150,16 +150,16 @@ article .preview {
 }
 
 .chart-window {
-    width: 100%;
-    height: 80vh;       /* better than fixed pixels */
+    height: 80vh;
     overflow-y: auto;
+    overflow-x: hidden;
     border: 2px solid #111;
     background: white;
+    position: relative;
 }
 
 .chart-window img {
     width: 100%;
-    height: auto;
     display: block;
 }
 
