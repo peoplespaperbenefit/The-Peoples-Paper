@@ -177,14 +177,11 @@ article .preview {
     margin: 20px auto;
 }
 
-/* Chart image */
-.poll-window img,
-#chartImage {
-    width: 5%;
-    height: auto;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
+.poll-window img {
+    width: 5% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
 }
 /* =========================================================
    FOOTER
