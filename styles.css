@@ -164,21 +164,17 @@ article .preview {
     max-width: 900px;
     height: 320px;
 
-    overflow: hidden;   /* key change */
+    overflow: auto;   /* IMPORTANT: restores scrolling */
 
     border: 2px solid #111;
     background: #fff;
 
     margin: 20px auto;
-
-    position: relative;
 }
 
 .poll-window img {
-    width: 180%;        /* zoom IN */
+    width: 300%;      /* moderate zoom */
     height: auto;
-
-    transform: translateX(-15%); /* shifts crop */
     display: block;
 }
 /* =========================================================
