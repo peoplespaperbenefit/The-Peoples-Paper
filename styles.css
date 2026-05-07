@@ -160,26 +160,27 @@ article .preview {
 /* Scrollable image window */
 .poll-window {
     width: 100%;
-    max-width: 1000px;
+    max-width: 800px;
 
-    height: 600px;
-
-    overflow-y: scroll;
-    overflow-x: auto;
+    height: 300px;          /* SHORT window */
+    contain: strict;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     border: 2px solid #111;
     background: #fff;
 
     margin: 20px auto;
+
+    position: relative;
 }
 
-/* Image inside window */
 .poll-window img {
-    width: 1000px;
+    width: 100%;
     height: auto;
+
     display: block;
 }
-
 
 /* =========================================================
    FOOTER
