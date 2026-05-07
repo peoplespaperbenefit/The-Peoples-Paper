@@ -166,8 +166,8 @@ article .preview {
     width: 100%;
     max-width: 800px;
 
-    height: 300px;          /* SHORT window */
-    
+    height: 300px;
+
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -175,16 +175,11 @@ article .preview {
     background: #fff;
 
     margin: 20px auto;
-
-    position: relative;
-   
-    outline: 3px solid red;
 }
 
 .poll-window img {
     width: 100%;
     height: auto;
-
     display: block;
 }
 
