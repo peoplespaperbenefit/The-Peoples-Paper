@@ -163,7 +163,7 @@ article .preview {
     max-width: 800px;
 
     height: 300px;          /* SHORT window */
-    contain: strict;
+    
     overflow-y: auto;
     overflow-x: hidden;
 
