@@ -169,7 +169,7 @@ article .preview {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 400%;
     user-select: none;
     -webkit-user-drag: none;
     pointer-events: none;
