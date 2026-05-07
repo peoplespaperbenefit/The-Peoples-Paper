@@ -160,6 +160,7 @@ article .preview {
 
 /* Scrollable chart container */
 .poll-window {
+.poll-window {
     width: 100%;
     max-width: 800px;
     height: 500px;
@@ -170,8 +171,10 @@ article .preview {
 }
 
 .poll-window img {
-    width: 100%;
+    width: auto !important;
+    height: 600px !important;
     display: block;
+    margin: 0 auto;
 }
 
 
