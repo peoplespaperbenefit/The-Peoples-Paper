@@ -151,11 +151,10 @@ article .preview {
 
 .chart-window {
     height: 80vh;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
     border: 2px solid #111;
     background: white;
-    position: relative;
 }
 
 .chart-window img {
