@@ -162,7 +162,7 @@ article .preview {
 .poll-window {
     width: 100%;
     max-width: 1000px;
-    height: 500px;
+    height: 300px;
 
     overflow: auto;
 
@@ -173,7 +173,7 @@ article .preview {
 }
 
 .poll-window img {
-    width: 250%;
+    width: 600%;
     height: auto;
     display: block;
 }
