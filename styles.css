@@ -157,23 +157,18 @@ article .preview {
     margin: 0 auto;
     padding: 20px;
 }
+
 /* Scrollable image window */
 .poll-window {
-    width: 100%;
     max-width: 900px;
-    height: 450px;
-
+    height: 500px;
     overflow: auto;
     border: 2px solid #111;
-    background: #fff;
-
     margin: 20px auto;
 }
 
 .poll-window img {
-    width: 160%;
-    height: auto;
-    display: block;
+    width: 140%;
 }
 
 /* =========================================================
