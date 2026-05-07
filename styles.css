@@ -160,13 +160,10 @@ article .preview {
 /* Scrollable image window */
 .poll-window {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
+    height: 450px;
 
-    height: 300px;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
+    overflow: auto;
     border: 2px solid #111;
     background: #fff;
 
@@ -174,7 +171,7 @@ article .preview {
 }
 
 .poll-window img {
-    width: 75%;
+    width: 160%;
     height: auto;
     display: block;
 }
