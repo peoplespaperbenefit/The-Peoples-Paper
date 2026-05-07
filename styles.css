@@ -173,6 +173,8 @@ article .preview {
     margin: 20px auto;
 
     position: relative;
+   
+    outline: 3px solid red;
 }
 
 .poll-window img {
