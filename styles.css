@@ -1,4 +1,4 @@
-900px/* =========================================================
+/* =========================================================
    GLOBAL RESET + MOBILE SAFETY
    ========================================================= */
 * {
@@ -19,6 +19,7 @@ img, video, iframe {
     height: auto;
 }
 
+
 /* =========================================================
    GLOBAL NEWSPAPER STYLE
    ========================================================= */
@@ -29,6 +30,7 @@ body {
     line-height: 1.6;
     font-size: clamp(16px, 1.2vw, 18px);
 }
+
 
 /* =========================================================
    HEADER / MASTHEAD
@@ -61,6 +63,7 @@ header {
     margin-bottom: 10px;
 }
 
+
 /* =========================================================
    NAVIGATION BAR
    ========================================================= */
@@ -85,6 +88,7 @@ nav a {
 nav a:hover {
     text-decoration: underline;
 }
+
 
 /* =========================================================
    MAIN LAYOUT / GRID
@@ -115,6 +119,7 @@ nav a:hover {
     }
 }
 
+
 /* =========================================================
    ARTICLE STYLING
    ========================================================= */
@@ -140,41 +145,19 @@ article .preview {
     line-height: 1.4;
     color: #222;
 }
+
+
 /* =========================================================
    IMAGES
    ========================================================= */
+
 .article {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.chart-window {
-    width: 100%;
-    max-width: 800px;
-    height: 80vh;
-    overflow: hidden;        /* IMPORTANT: no scrollbars */
-    border: 2px solid #111;
-    background: white;
-    position: relative;
-    margin: 0 auto;
-    cursor: grab;
-}
-
-.chart-window:active {
-    cursor: grabbing;
-}
-
-.chart-window img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 400%;
-    user-select: none;
-    -webkit-user-drag: none;
-    pointer-events: none;
-}
-
+/* Regular article images */
 .article-img {
     width: 100%;
     height: auto;
@@ -182,19 +165,25 @@ article .preview {
     margin-bottom: 10px;
 }
 
+/* Scrollable chart container */
 .poll-window {
     width: 100%;
     max-width: 800px;
-    height: 600px;        /* or 80vh */
-    overflow-y: auto;     /* auto is better than scroll */
+    height: 500px;
+    overflow-y: auto;
     overflow-x: hidden;
     border: 2px solid #111;
+    background: #fff;
+    margin: 20px auto;
 }
 
-.poll-window img {
-    display: block;
+/* Chart image */
+.poll-window img,
+#chartImage {
     width: 100%;
     height: auto;
+    max-width: 100%;
+    display: block;
 }
 /* =========================================================
    FOOTER
