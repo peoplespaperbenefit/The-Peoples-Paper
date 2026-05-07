@@ -19,6 +19,10 @@ img, video, iframe {
     height: auto;
 }
 
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
 
 /* =========================================================
    GLOBAL NEWSPAPER STYLE
