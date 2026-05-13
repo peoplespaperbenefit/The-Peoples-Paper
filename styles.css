@@ -178,7 +178,7 @@ article .preview {
 
 /* FORCE image to ignore responsive scaling */
 .poll-window img {
-    width: 2500px !important;
+    width: 3250px !important;
     max-width: none !important;
     height: auto !important;
     display: block;
