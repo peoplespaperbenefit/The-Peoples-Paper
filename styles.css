@@ -183,6 +183,40 @@ article .preview {
     height: auto !important;
     display: block;
 }
+
+/* =========================================================
+   NEWSPAPER COLUMN LAYOUT
+   ========================================================= */
+
+.news-layout {
+    column-count: 3;
+    column-gap: 30px;
+}
+
+/* Keep articles together */
+.article {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+
+    margin-bottom: 25px;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .news-layout {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .news-layout {
+        column-count: 1;
+    }
+}
+
 /* =========================================================
    FOOTER
    ========================================================= */
