@@ -224,7 +224,39 @@ footer {
         <h3>Tech-no</h3>
         <div class="role">Technical Manager / Editor</div>
         <div class="bio">Hey, Im Tech-No. Currently coding the site... check out the links below </div>
+   
+    <div class="pdf-container">
+
+    <!-- PDF Viewer -->
+    <iframe 
+        src="documents/my-paper.pdf"
+        class="pdf-viewer">
+    </iframe>
+
+    <!-- Controls -->
+    <div class="pdf-controls">
+        <a href="documents/my-paper.pdf" download class="pdf-btn">
+            Download PDF
+        </a>
+
+        <button class="pdf-btn" onclick="printPDF()">
+            Print PDF
+        </button>
     </div>
+
+</div>
+
+<script>
+function printPDF() {
+    const pdfWindow = window.open('documents/my-paper.pdf');
+    pdfWindow.addEventListener('load', function () {
+        pdfWindow.print();
+    });
+}
+</script>
+    
+    
+</div>
 
     <div class="section-title">PP Team</div>
 
