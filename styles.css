@@ -216,6 +216,29 @@ article .preview {
     display: block;
 }
 
+
+.game-btn{
+display:inline-block;
+padding:10px 18px;
+margin:15px 0;
+
+background:#111;
+color:#fff;
+
+text-decoration:none;
+
+border:2px solid #000;
+
+font-family:'Libre Baskerville',serif;
+
+transition:.2s;
+}
+
+.game-btn:hover{
+transform:translateY(-2px);
+}
+
+
 /* =========================================================
    NEWSPAPER COLUMN LAYOUT
    ========================================================= */
